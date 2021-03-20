@@ -1,4 +1,4 @@
-/snap/clion/139/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/nudian/Documents/TD Systemes d'explotation/Projet/PROJET"
+/snap/clion/145/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET
 -- The C compiler identification is GNU 7.5.0
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc - works
@@ -8,4 +8,4 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/nudian/Documents/TD Systemes d'explotation/Projet/PROJET/cmake-build-debug
+-- Build files have been written to: /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug
