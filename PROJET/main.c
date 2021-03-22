@@ -44,7 +44,7 @@ char *memoirePourProgremme;
 /**
  * Functions a realizer
  */
-void initMemory();
+void initMemory2();
 void myfree();
 /**
  * Functions Tests
@@ -54,13 +54,16 @@ void test1();
 void test_brk();
 void setPagesize();
 void test_mmap();
-
+void test_Adresse();
+void initMemory();
 
 int main(int argc, char *argv[]) {
     initMemory();
-    myfree();
-    printf("Memoire fin :%p \n",memoirePourProgremme);
+    //myfree();
+    //printf("Memoire fin :%p \n",memoirePourProgremme);
     //test_mmap();
+    //test_Adresse();
+    test_brk();
     return 0;
 }
 
@@ -77,8 +80,8 @@ void test_brk(){
     void *third=sbrk(0);
 
     printf("First: %p\n",first);
-    printf("Second: %p\n",first);
-    printf("Third: %p\n",first);
+    printf("Second: %p\n",second);
+    printf("Third: %p\n",third);
 }
 void test_mmap(){
     int deux;
@@ -105,6 +108,9 @@ void initMemory(){
         printf("Erreur dans la alocation de la memoire");
         exit(1);
     }
+    char * edson=sbrk(0);
+    printf("La memoire progrmme apres brk est :%p \n",edson);
+
 }
 
 void myfree(){
@@ -115,7 +121,17 @@ void myfree(){
     }
 }
 
+void test_Adresse(){
+    int aa = 10; // Your variable 'aa'
+    int* aa_ptr = &aa; // 'aa_ptr' contains the address of the variable aa.
+    printf("\n");
+    printf("The variable 'aa' is at the address %p and contains the value: %d", aa_ptr, *aa_ptr); // '*aa_ptr' would show the value of the variable 'aa'
+
+}
+
+void initMemory2(){
 
 
 
+}
 
