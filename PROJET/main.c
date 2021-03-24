@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 
-
+/*Variables Globales*/
 char *memoireInitiale;
 char *memoireMax;
 char *memoireActuelle;
@@ -17,6 +17,7 @@ void* myalloc(int nbytes);
 int calculTaille(int tailleVariable);
 void setTaileDePageSysteme();
 void setMemoireActuelle(char nouvelleMemoire);
+void * calculPourLaPage(char *ancienneAdresse, int nBytes);
 
 int main(){
 
@@ -67,7 +68,8 @@ void* myalloc(int nBytes){
         return 0;
     }else{
         memoireActuelle=tailleVariable+memoireActuelle;
-        return (void *)ancienneAdresse;
+        //return (void *)ancienneAdresse;
+        return calculPourLaPage(&ancienneAdresse,nBytes);
     }
 }
 /**
@@ -81,4 +83,8 @@ int calculTaille(int tailleVariable){
 
 void setTaileDePageSysteme(){
     tailleDePageDeSysteme=getpagesize();
+}
+void * calculPourLaPage(char *ancienneAdresse, int nBytes){
+    *(size_t *)ancienneAdresse=nBytes;
+    return (void *)((char *)ancienneAdresse+tailleDePageDeSysteme);
 }
