@@ -143,6 +143,60 @@ untitled/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
+functions.o: functions.c.o
+
+.PHONY : functions.o
+
+# target to build an object file
+functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/functions.c.o
+.PHONY : functions.c.o
+
+functions.i: functions.c.i
+
+.PHONY : functions.i
+
+# target to preprocess a source file
+functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/functions.c.i
+.PHONY : functions.c.i
+
+functions.s: functions.c.s
+
+.PHONY : functions.s
+
+# target to generate assembly for a file
+functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/functions.c.s
+.PHONY : functions.c.s
+
+liste.o: liste.c.o
+
+.PHONY : liste.o
+
+# target to build an object file
+liste.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/liste.c.o
+.PHONY : liste.c.o
+
+liste.i: liste.c.i
+
+.PHONY : liste.i
+
+# target to preprocess a source file
+liste.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/liste.c.i
+.PHONY : liste.c.i
+
+liste.s: liste.c.s
+
+.PHONY : liste.s
+
+# target to generate assembly for a file
+liste.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/liste.c.s
+.PHONY : liste.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -170,6 +224,60 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/main.c.s
 .PHONY : main.c.s
 
+structureProgramme.o: structureProgramme.c.o
+
+.PHONY : structureProgramme.o
+
+# target to build an object file
+structureProgramme.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/structureProgramme.c.o
+.PHONY : structureProgramme.c.o
+
+structureProgramme.i: structureProgramme.c.i
+
+.PHONY : structureProgramme.i
+
+# target to preprocess a source file
+structureProgramme.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/structureProgramme.c.i
+.PHONY : structureProgramme.c.i
+
+structureProgramme.s: structureProgramme.c.s
+
+.PHONY : structureProgramme.s
+
+# target to generate assembly for a file
+structureProgramme.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/structureProgramme.c.s
+.PHONY : structureProgramme.c.s
+
+utils.o: utils.c.o
+
+.PHONY : utils.o
+
+# target to build an object file
+utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/utils.c.o
+.PHONY : utils.c.o
+
+utils.i: utils.c.i
+
+.PHONY : utils.i
+
+# target to preprocess a source file
+utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/utils.c.i
+.PHONY : utils.c.i
+
+utils.s: utils.c.s
+
+.PHONY : utils.s
+
+# target to generate assembly for a file
+utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/utils.c.s
+.PHONY : utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -179,9 +287,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... untitled"
+	@echo "... functions.o"
+	@echo "... functions.i"
+	@echo "... functions.s"
+	@echo "... liste.o"
+	@echo "... liste.i"
+	@echo "... liste.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... structureProgramme.o"
+	@echo "... structureProgramme.i"
+	@echo "... structureProgramme.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 

@@ -78,7 +78,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/functions.c">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/functions.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/liste.c">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/liste.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/main.c">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/structureProgramme.c">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/structureProgramme.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/utils.c">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/utils.h">
 			<Option target="untitled"/>
 		</Unit>
 		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/CMakeLists.txt">
