@@ -24,17 +24,7 @@
 
 int main(){
     initMemory(15);
-    //initMemory(500);
-    ListeBlock listBlock;
-    listBlock=initListe();
-    inserteteListe(0,2,&listBlock);
-    inserteteListe(0,2,&listBlock);
-    inserteteListe(0,2,&listBlock);
-    inserteteListe(0,2,&listBlock);
-    inserteteListe(0,2,&listBlock);
-    inserteteListe(0,2,&listBlock);
-    afficheListe(listBlock);
-
+    int *i=myalloc(sizeof(int));
     return 0;
 }
 

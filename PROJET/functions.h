@@ -15,6 +15,7 @@ void* myalloc(int nBytes);
 
 
 void affichageStatusMemoire();
+void initUtils(int nBytes);
 void setTailleDePageSysteme();
 int calculTaille(int tailleVariable);
 void * calculPourLaPage(char *ancienneAdresse, int nBytes);

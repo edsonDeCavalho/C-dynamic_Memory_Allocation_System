@@ -32,9 +32,12 @@ typedef struct celule
 
 
 void afficheListe(ListeBlock l);
-void inserteteListe(char *adresse, int taiile,ListeBlock *l);
+int tailleListeBlock(ListeBlock l);
+void inserteteListe(ListeBlock *l,struct Block block);
 bool estVide(ListeBlock l);
 ListeBlock initLite();
 char *getadresseVariable(ListeBlock l);
 int gettailleVariable(ListeBlock l);
 ListeBlock initListe();
+void *getData(ListeBlock l);
+int getTaille(ListeBlock l);

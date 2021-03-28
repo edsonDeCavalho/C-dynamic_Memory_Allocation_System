@@ -6,17 +6,19 @@
 #include <stdlib.h>
 #include "functions.h"
 #include "utils.h"
+#include "ListeBlock.h"
 
-
+static ListeBlock listeBlock;
 static  struct DonnesProgramme donnesProgramme;
 
 /**
  * Function pour recuperer un espace memoire avec
  * malloc.
  * @param nbytes
+ * @return creationd de l'adresse initiale et adresse max.
  */
 void initMemory(int nbytes){
-    donnesProgramme=createDetailsProgrmme(nbytes);
+    initUtils(nbytes);
     donnesProgramme.tailleMemoireTotal=nbytes;
     if((donnesProgramme.AdresseMemoireInitiale=(char*)malloc(nbytes))==NULL){
         fprintf(stderr,"Erreur dans la allocation de la memoire initiale");
@@ -31,12 +33,13 @@ void initMemory(int nbytes){
     affichageStatusMemoire();
 }
 /**
- * Function pour alluer de la memoire pour une variable dasn le
+ * Function pour alluer de la memoire pour une variable dans le
  * espace memoire reserveé pour le programme.
  * @param nBytes
  * @return
  */
 void* myalloc(int nBytes){
+
     int tailleVariable=calculTaille(nBytes);
     /*Incrementation Memoire*/
     char *ancienneAdresse=donnesProgramme.AdresseMemoireAcuelle;
@@ -47,10 +50,34 @@ void* myalloc(int nBytes){
     }else{
         donnesProgramme.AdresseMemoireAcuelle=tailleVariable+donnesProgramme.AdresseMemoireAcuelle;
         //return (void *)ancienneAdresse;
+
+        /**
+         * Creation de un  Blocks
+         * A faire:
+         *   *Configuration du footer
+         *   *Configuration du header
+         *
+         */
+        /*Creation de footer (il faout configurer le footer) */
+        struct Header header;
+        header.taille=0;
+        header.estvide=false;
+        /*Creation de header*/
+        struct Footer footer;
+        footer.taille=0;
+        header.estvide=false;
+        struct Block block;
+        /*Recuperation de l' adresse*/
+        block.data=calculPourLaPage(ancienneAdresse,nBytes);
+        /*Ajout dans la liste*/
+        inserteteListe(&listeBlock,block);
+        /*En return le block->data*/
+
         affichageStatusMemoire();
-        return calculPourLaPage(ancienneAdresse,nBytes);
+        return block.data;
     }
 }
+
 
 
 int calculTaille(int tailleVariable){
@@ -64,15 +91,17 @@ void * calculPourLaPage(char *ancienneAdresse, int nBytes){
 
 void affichageStatusMemoire(){
     printf("\n************************************************ \n");
-    printf("Memoire initiale %p\n",donnesProgramme.AdresseMemoireInitiale);
-    printf("Memoire Actuelle %p\n",donnesProgramme.AdresseMemoireAcuelle);
-    printf("Memoire Max %p\n",donnesProgramme.AdresseMemoireMax);
+    printf("Memoire initiale: %p\n",donnesProgramme.AdresseMemoireInitiale);
+    printf("Memoire Actuelle: %p\n",donnesProgramme.AdresseMemoireAcuelle);
+    printf("Memoire Max     : %p\n",donnesProgramme.AdresseMemoireMax);
+    printf("Total de bloks alluées : %d",tailleListeBlock(listeBlock));
     printf("\n************************************************ \n");
 }
 
 struct DonnesProgramme createDetailsProgrmme(int nBytes){
     struct DonnesProgramme *d;
     d=malloc(sizeof(struct DonnesProgramme));
+    d->tailleMemoireTotal=nBytes;
     d->AdresseMemoireAcuelle=NULL;
     d->AdresseMemoireMax=NULL;
     d->AdresseMemoireInitiale=NULL;
@@ -80,4 +109,9 @@ struct DonnesProgramme createDetailsProgrmme(int nBytes){
     d->taillePageDuSysteme=getpagesize();
     d->tailleMemoireTotal=NULL;
     return *d;
+}
+
+void initUtils(int nBytes){
+    donnesProgramme=createDetailsProgrmme(nBytes);
+    listeBlock=initListe();
 }

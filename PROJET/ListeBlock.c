@@ -13,12 +13,11 @@ bool estVide(ListeBlock l)
     return l==NULL;
 }
 
-void inserteteListe(char *adresse, int taille,ListeBlock *l)
+void inserteteListe(ListeBlock *l,struct Block block)
 {
     ListeBlock cel;
     cel=(ListeBlock)malloc(sizeof(struct celule));
-    cel->adresseDebut=adresse;
-    cel->taille=taille;
+    cel->block=block;
     cel->suivant=*l;
     *l=cel;
 }
@@ -35,16 +34,30 @@ void afficheListe(ListeBlock l)
     while(l != NULL)
     {
         i++;
-        printf(" Premiere %d  :  [Adresse : %p ] \n",i,getadresseVariable(l));
-        printf(" Taille de la variable :  [ %d ] \n",gettailleVariable(l));
+        printf(" Premiere %d  :  [Adresse : %p ] \n",i,getData(l));
+        printf(" Taille de la variable :  [ %d ] \n",getTaille(l));
         printf("\n");
         l =suivant(l);
     }
 }
 
-char *getadresseVariable(ListeBlock l){
-    return l->adresseDebut;
+struct Block getBlock(ListeBlock l){
+    return l->block;
 }
-int gettailleVariable(ListeBlock l){
-    return l->taille;
+
+int tailleListeBlock(ListeBlock l){
+    int i = 0;
+    while(l != NULL) {
+        i++;
+        l=suivant(l);
+    }
+    return i;
 }
+void *getData(ListeBlock l){
+    return (void*) l->block.data;
+}
+
+int getTaille(ListeBlock l){
+    return l->block.footer.taille+l->block.header.taille;
+}
+
