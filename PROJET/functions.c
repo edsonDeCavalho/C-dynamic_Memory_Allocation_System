@@ -17,10 +17,10 @@ static  struct DonnesProgramme donnesProgramme;
  */
 void initMemory(int nbytes){
     printf("é");
-    *donnesProgramme=createDetailsProgrmme(nbytes);
-    donnesProgramme->tailleMemoireTotal=nbytes;
+    donnesProgramme=createDetailsProgrmme(nbytes);
+    donnesProgramme.tailleMemoireTotal=nbytes;
     printf("é");
-    if((donnesProgramme->AdresseMemoireInitiale=(char*)malloc(nbytes))==NULL){
+    if((donnesProgramme.AdresseMemoireInitiale=(char*)malloc(nbytes))==NULL){
         printf("é");
         fprintf(stderr,"Erreur dans la allocation de la memoire initiale");
         affichageStatusMemoire();
@@ -28,8 +28,8 @@ void initMemory(int nbytes){
     }
     else{
         printf("Memoire allueée avec succées \n");
-        donnesProgramme->AdresseMemoireMax=donnesProgramme->AdresseMemoireInitiale+nbytes;
-        donnesProgramme->AdresseMemoireAcuelle=donnesProgramme->AdresseMemoireInitiale;
+        donnesProgramme.AdresseMemoireMax=donnesProgramme.AdresseMemoireInitiale+nbytes;
+        donnesProgramme.AdresseMemoireAcuelle=donnesProgramme.AdresseMemoireInitiale;
     }
     affichageStatusMemoire();
 }
@@ -42,13 +42,13 @@ void initMemory(int nbytes){
 void* myalloc(int nBytes){
     int tailleVariable=calculTaille(nBytes);
     /*Incrementation Memoire*/
-    char *ancienneAdresse=donnesProgramme->AdresseMemoireAcuelle;
-    if((nBytes<0) || (donnesProgramme->AdresseMemoireAcuelle>donnesProgramme->AdresseMemoireMax)){
+    char *ancienneAdresse=donnesProgramme.AdresseMemoireAcuelle;
+    if((nBytes<0) || (donnesProgramme.AdresseMemoireAcuelle>donnesProgramme.AdresseMemoireMax)){
         fprintf(stderr,"Segmente defaoult d'hors de la memoire autorisée");
         affichageStatusMemoire();
         return (void*)-1;
     }else{
-        donnesProgramme->AdresseMemoireAcuelle=tailleVariable+donnesProgramme->AdresseMemoireAcuelle;
+        donnesProgramme.AdresseMemoireAcuelle=tailleVariable+donnesProgramme.AdresseMemoireAcuelle;
         //return (void *)ancienneAdresse;
         affichageStatusMemoire();
         return calculPourLaPage(ancienneAdresse,nBytes);
@@ -60,19 +60,19 @@ void* myalloc(int nBytes){
 
 
 int calculTaille(int tailleVariable){
-    return tailleVariable+donnesProgramme->taillePageDuSysteme & ~0x7;
+    return tailleVariable+donnesProgramme.taillePageDuSysteme & ~0x7;
 }
 
 void * calculPourLaPage(char *ancienneAdresse, int nBytes){
     *(size_t *)ancienneAdresse=nBytes;
-    return (void *)((char *)ancienneAdresse+donnesProgramme->taillePageDuSysteme);
+    return (void *)((char *)ancienneAdresse+donnesProgramme.taillePageDuSysteme);
 }
 
 void affichageStatusMemoire(){
     printf("\n ************************************************ \n");
-    printf("Memoire initiale %p \n",donnesProgramme->AdresseMemoireInitiale);
-    printf("Memoire Actuelle %p\n",donnesProgramme->AdresseMemoireAcuelle);
-    printf("Memoire Max %p\n",donnesProgramme->AdresseMemoireMax);
+    printf("Memoire initiale %p \n",donnesProgramme.AdresseMemoireInitiale);
+    printf("Memoire Actuelle %p\n",donnesProgramme.AdresseMemoireAcuelle);
+    printf("Memoire Max %p\n",donnesProgramme.AdresseMemoireMax);
     printf("\n ************************************************ \n");
 }
 
