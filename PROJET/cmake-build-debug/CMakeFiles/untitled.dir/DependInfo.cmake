@@ -4,10 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/ListeBlock.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles/untitled.dir/ListeBlock.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/functions.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles/untitled.dir/functions.c.o"
-  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/liste.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles/untitled.dir/liste.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/main.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles/untitled.dir/main.c.o"
-  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/structureProgramme.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles/untitled.dir/structureProgramme.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/utils.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles/untitled.dir/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

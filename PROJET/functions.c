@@ -16,12 +16,9 @@ static  struct DonnesProgramme donnesProgramme;
  * @param nbytes
  */
 void initMemory(int nbytes){
-    printf("é");
     donnesProgramme=createDetailsProgrmme(nbytes);
     donnesProgramme.tailleMemoireTotal=nbytes;
-    printf("é");
     if((donnesProgramme.AdresseMemoireInitiale=(char*)malloc(nbytes))==NULL){
-        printf("é");
         fprintf(stderr,"Erreur dans la allocation de la memoire initiale");
         affichageStatusMemoire();
         exit(1);
@@ -53,10 +50,7 @@ void* myalloc(int nBytes){
         affichageStatusMemoire();
         return calculPourLaPage(ancienneAdresse,nBytes);
     }
-
 }
-
-
 
 
 int calculTaille(int tailleVariable){
@@ -69,11 +63,11 @@ void * calculPourLaPage(char *ancienneAdresse, int nBytes){
 }
 
 void affichageStatusMemoire(){
-    printf("\n ************************************************ \n");
-    printf("Memoire initiale %p \n",donnesProgramme.AdresseMemoireInitiale);
+    printf("\n************************************************ \n");
+    printf("Memoire initiale %p\n",donnesProgramme.AdresseMemoireInitiale);
     printf("Memoire Actuelle %p\n",donnesProgramme.AdresseMemoireAcuelle);
     printf("Memoire Max %p\n",donnesProgramme.AdresseMemoireMax);
-    printf("\n ************************************************ \n");
+    printf("\n************************************************ \n");
 }
 
 struct DonnesProgramme createDetailsProgrmme(int nBytes){

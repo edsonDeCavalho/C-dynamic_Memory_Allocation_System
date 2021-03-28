@@ -8,15 +8,27 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-typedef int TElement ;
+struct Header{
+    int taille;
+    bool estvide;
+};
+
+struct Footer{
+    int taille;
+    bool estvide;
+};
+
+struct Block {
+    struct Header header;
+    void* data;
+    struct Footer footer;
+};
 
 typedef struct celule
 {
-    int taille;
-    char *adresseDebut;
-    struct cellule *suivant;
+    struct Block block;
+    struct celule *suivant;
 }*ListeBlock;
-
 
 
 void afficheListe(ListeBlock l);

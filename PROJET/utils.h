@@ -9,3 +9,5 @@ typedef struct{
     int taille;
     char fichier;
 }InstructionsSimulation;
+
+

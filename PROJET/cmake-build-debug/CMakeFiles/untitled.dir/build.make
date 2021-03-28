@@ -90,35 +90,22 @@ CMakeFiles/untitled.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/main.c -o CMakeFiles/untitled.dir/main.c.s
 
-CMakeFiles/untitled.dir/structureProgramme.c.o: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/structureProgramme.c.o: ../structureProgramme.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled.dir/structureProgramme.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/structureProgramme.c.o   -c /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/structureProgramme.c
+CMakeFiles/untitled.dir/ListeBlock.c.o: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/ListeBlock.c.o: ../ListeBlock.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled.dir/ListeBlock.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/ListeBlock.c.o   -c /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/ListeBlock.c
 
-CMakeFiles/untitled.dir/structureProgramme.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/structureProgramme.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/structureProgramme.c > CMakeFiles/untitled.dir/structureProgramme.c.i
+CMakeFiles/untitled.dir/ListeBlock.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/ListeBlock.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/ListeBlock.c > CMakeFiles/untitled.dir/ListeBlock.c.i
 
-CMakeFiles/untitled.dir/structureProgramme.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/structureProgramme.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/structureProgramme.c -o CMakeFiles/untitled.dir/structureProgramme.c.s
-
-CMakeFiles/untitled.dir/liste.c.o: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/liste.c.o: ../liste.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled.dir/liste.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/liste.c.o   -c /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/liste.c
-
-CMakeFiles/untitled.dir/liste.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/liste.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/liste.c > CMakeFiles/untitled.dir/liste.c.i
-
-CMakeFiles/untitled.dir/liste.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/liste.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/liste.c -o CMakeFiles/untitled.dir/liste.c.s
+CMakeFiles/untitled.dir/ListeBlock.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/ListeBlock.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/ListeBlock.c -o CMakeFiles/untitled.dir/ListeBlock.c.s
 
 CMakeFiles/untitled.dir/utils.c.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/utils.c.o: ../utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled.dir/utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled.dir/utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/utils.c.o   -c /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/utils.c
 
 CMakeFiles/untitled.dir/utils.c.i: cmake_force
@@ -131,7 +118,7 @@ CMakeFiles/untitled.dir/utils.c.s: cmake_force
 
 CMakeFiles/untitled.dir/functions.c.o: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/functions.c.o: ../functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled.dir/functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled.dir/functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled.dir/functions.c.o   -c /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/functions.c
 
 CMakeFiles/untitled.dir/functions.c.i: cmake_force
@@ -145,8 +132,7 @@ CMakeFiles/untitled.dir/functions.c.s: cmake_force
 # Object files for target untitled
 untitled_OBJECTS = \
 "CMakeFiles/untitled.dir/main.c.o" \
-"CMakeFiles/untitled.dir/structureProgramme.c.o" \
-"CMakeFiles/untitled.dir/liste.c.o" \
+"CMakeFiles/untitled.dir/ListeBlock.c.o" \
 "CMakeFiles/untitled.dir/utils.c.o" \
 "CMakeFiles/untitled.dir/functions.c.o"
 
@@ -154,13 +140,12 @@ untitled_OBJECTS = \
 untitled_EXTERNAL_OBJECTS =
 
 untitled: CMakeFiles/untitled.dir/main.c.o
-untitled: CMakeFiles/untitled.dir/structureProgramme.c.o
-untitled: CMakeFiles/untitled.dir/liste.c.o
+untitled: CMakeFiles/untitled.dir/ListeBlock.c.o
 untitled: CMakeFiles/untitled.dir/utils.c.o
 untitled: CMakeFiles/untitled.dir/functions.c.o
 untitled: CMakeFiles/untitled.dir/build.make
 untitled: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable untitled"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/PROJET/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable untitled"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
