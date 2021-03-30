@@ -28,16 +28,16 @@ int initMemory(int nBytes){
 
         Header initHeader = myMemoryPool ;
         Footer initFooter = myMemoryPool + local - UNIT_SIZE;
-        myMemoryPool += UNIT_SIZE;
+        void *firstBlock = myMemoryPool+UNIT_SIZE;
         *initHeader = 0;
         *initFooter = 0;
-        myMemoryPool = addHeader(myMemoryPool,(local-2*UNIT_SIZE),STATE_FREE);
-        addFooter(myMemoryPool,(local-2*UNIT_SIZE),STATE_FREE);
+        firstBlock = addHeader(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
+        addFooter(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
 
         for (int i=0;i<FREE_LIST_NUMBER;i++){
             myFreeLists[i]=initListBlock();
         }
-        insertFreeList(myFreeLists, myMemoryPool);
+        insertFreeList(myFreeLists, firstBlock);
 
         myUserList = initListBlock();
 
