@@ -35,6 +35,8 @@ typedef struct block{
     Footer footer;
 }*Block;
 
+Block initDataBlock(void *pd);
+
 //Actually we regard the address of data as the pointer return to user
 char *getBlockDataPointer(Block block);
 
@@ -44,6 +46,7 @@ int checkNextBlock(Block pb);
 
 
 typedef struct listBlock{
+    int size;
     Block block;
     struct listBlock *next;
 }*ListBlock;
@@ -70,8 +73,8 @@ int countListSpace ();
 #define GET_HEADER_VALUE(pb) ( *(int *) GET_HEADER_ADR(pb) )
 #define GET_PREV_BLOCK_INFO(pb) ( *(int *) (pb-2) )
 //Unfortunately we cannot use macro for footer as we dont know the signe, small pain but okay
-int *GET_FOOTER_ADR(Block block);
-int GET_NEXT_BLOCK_INFO(Block block);
+int *GET_FOOTER_ADR(void *pd);
+int GET_NEXT_BLOCK_INFO(void *pd);
 
 
 
