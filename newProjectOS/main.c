@@ -6,7 +6,7 @@ int initMemory (int nBytes);
 int freeMemory();
 void* myalloc(int nBytes);
 int myfree(void* p);
-void* myrealloc(int nBytes);
+void* myrealloc(void *p, int nBytes);
 
 //Tests show that void* is a kind of char*, so we move the position by unit 'byte'
 void *myMemoryPool;
@@ -67,7 +67,14 @@ void* myalloc(int nBytes){
 int myfree(void* p){
     freeUserList(myUserList, p, myFreeLists);
 }
-void* myrealloc(int nBytes);
+void* myrealloc(void *p, int nBytes){
+    myfree(p);
+    p = myalloc(nBytes);
+    return p;
+
+}
+
+
 
 
 
