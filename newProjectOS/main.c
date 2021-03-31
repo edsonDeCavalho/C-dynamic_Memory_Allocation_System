@@ -31,15 +31,16 @@ int initMemory(int nBytes){
         void *firstBlock = myMemoryPool+UNIT_SIZE;
         *initHeader = 0;
         *initFooter = 0;
-        firstBlock = addHeader(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
+        firstBlock += UNIT_SIZE;
+        addHeader(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
         addFooter(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
 
         for (int i=0;i<FREE_LIST_NUMBER;i++){
-            myFreeLists[i]=initListBlock();
+            myFreeLists[i]=(ListBlock) malloc(sizeof(struct listBlock));
         }
         insertFreeList(myFreeLists, firstBlock);
 
-        myUserList = initListBlock();
+        myUserList = (ListBlock) malloc(sizeof(struct listBlock));
 
         return 1;
     }
@@ -59,8 +60,13 @@ int freeMemory(){
 }
 
 
-void* myalloc(int nBytes);
-int myfree(void* p);
+void* myalloc(int nBytes){
+    ListBlock new = findFreeList(myFreeLists, nBytes);
+    insertUserList(myUserList,new);
+}
+int myfree(void* p){
+    freeUserList(myUserList, p, myFreeLists);
+}
 void* myrealloc(int nBytes);
 
 

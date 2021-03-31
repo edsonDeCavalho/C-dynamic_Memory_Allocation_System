@@ -24,14 +24,14 @@
 typedef int* Header;
 typedef int* Footer;
 
-void *addHeader(void *pd, int size, int state);
+void addHeader(void *pd, int size, int state);
 void addFooter(void *pd, int size, int state);
 
 
 //Our basic structure for (free) list, and we use pointer of char for data as it's more safe to return as void*
 typedef struct block{
     Header header;
-    char *data;
+    void *data;
     Footer footer;
 }*Block;
 
@@ -48,16 +48,27 @@ int checkNextBlock(Block pb);
 typedef struct listBlock{
     int size;
     Block block;
+    struct listBlock *last;
     struct listBlock *next;
 }*ListBlock;
+
+ListBlock initListBlock(Block block);
 
 #define LIST_HOME_SIZE
 //#define ListBlock[LIST_HOME_SIZE] MY_LIST
 
-ListBlock initListBlock();
 
 void insertFreeList(ListBlock freeLists[], void *pd);
 void insertUserList(ListBlock head, ListBlock list);
+
+ListBlock firstFitFreeList(ListBlock freeList, int size);
+ListBlock findFreeList(ListBlock freeLists[], int nBytes);
+
+void freeUserList(ListBlock userLists, void *p, ListBlock freeLists[]);
+void freeBusyList(ListBlock freeLists[], ListBlock listToFree);
+void fusionList(ListBlock freeLists[], ListBlock newList);
+void deleteFusionInfo(void*pd);
+
 
 int countListSpace ();
 
@@ -71,10 +82,10 @@ int countListSpace ();
 #define GET_POINTER_VALUE(p) ( *(int *) )
 #define GET_HEADER_ADR(pb) ( (pb-UNIT_SIZE) )
 #define GET_HEADER_VALUE(pb) ( *(int *) GET_HEADER_ADR(pb) )
-#define GET_PREV_BLOCK_INFO(pb) ( *(int *) (pb-2) )
+#define GET_PREV_BLOCK_ADR(pb) ( (void *) (pb-2*UNIT_SIZE) )
 //Unfortunately we cannot use macro for footer as we dont know the signe, small pain but okay
 int *GET_FOOTER_ADR(void *pd);
-int GET_NEXT_BLOCK_INFO(void *pd);
+void * GET_NEXT_BLOCK_ADR(void *pd);
 
 
 
