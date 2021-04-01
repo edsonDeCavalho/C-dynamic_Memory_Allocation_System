@@ -25,6 +25,10 @@ int initMemory(int nBytes){
     int local = INIT_MEMORY_SIZE(nBytes);
     if((myMemoryPool=(int*)malloc(INIT_MEMORY_SIZE(nBytes)))==NULL){
         fprintf(stderr,"Erreur dans la allocation de la memoire initiale");
+        return 1;
+    }
+    else{
+        printf("Memoire allueée avec succées %d \n",local);
 
         Header initHeader = myMemoryPool ;
         Footer initFooter = myMemoryPool + local - UNIT_SIZE;
@@ -42,10 +46,7 @@ int initMemory(int nBytes){
 
         myUserList = (ListBlock) malloc(sizeof(struct listBlock));
 
-        return 1;
-    }
-    else{
-        printf("Memoire allueée avec succées %d \n",local);
+
     }
 
     short int t = 16;
