@@ -166,7 +166,19 @@ void freeUserList(ListBlock userLists, void *p, ListBlock freeLists[]) {
     }
 }
 
-
+ListBlock findUserList(ListBlock userList, void *p) {
+    ListBlock current = userList;
+    while (current != NULL){
+        if (userList->block->data==p)break;
+        current=current->next;
+    }
+    if (current == NULL){
+        fprintf(stderr,"Element n'exist pas!");
+        return NULL;
+    } else{
+        return current;
+    }
+}
 
 
 
@@ -179,10 +191,12 @@ void freeBusyList(ListBlock freeLists[], ListBlock listToFree){
 
 void fusionList(ListBlock freeLists[], ListBlock newList){
     void *actual = newList->block->data;
+    *(newList->block->header)=abs(*(newList->block->header));
+    *(newList->block->footer)=abs(*(newList->block->footer));
 
     int size = GET_HEADER_VALUE(GET_NEXT_BLOCK_ADR(actual));
     if( size > 0){
-        size = size + abs(GET_HEADER_VALUE(actual)) + 2*UNIT_SIZE;
+        size = size + GET_HEADER_VALUE(actual) + 2*UNIT_SIZE;
         deleteFusionInfo(GET_NEXT_BLOCK_ADR(actual));
         addHeader(actual,size,STATE_FREE);
         addFooter(actual,size,STATE_FREE);
@@ -190,7 +204,7 @@ void fusionList(ListBlock freeLists[], ListBlock newList){
 
     size = GET_HEADER_VALUE(GET_PREV_BLOCK_ADR(newList->block->data));
     if ( size > 0){
-        size = size + abs(GET_HEADER_VALUE(actual)) + 2*UNIT_SIZE;
+        size = size + GET_HEADER_VALUE(actual) + 2*UNIT_SIZE;
         void *t = GET_PREV_BLOCK_ADR(actual);
         deleteFusionInfo(GET_NEXT_BLOCK_ADR(actual));
         actual = t;

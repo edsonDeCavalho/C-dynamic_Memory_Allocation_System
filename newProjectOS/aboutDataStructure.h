@@ -64,6 +64,8 @@ void insertUserList(ListBlock head, ListBlock list);
 ListBlock firstFitFreeList(ListBlock freeList, int size);
 ListBlock findFreeList(ListBlock freeLists[], int nBytes);
 
+ListBlock findUserList(ListBlock userList, void *p);
+
 void freeUserList(ListBlock userLists, void *p, ListBlock freeLists[]);
 void freeBusyList(ListBlock freeLists[], ListBlock listToFree);
 void fusionList(ListBlock freeLists[], ListBlock newList);

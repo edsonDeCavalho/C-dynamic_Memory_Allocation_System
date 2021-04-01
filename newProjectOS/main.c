@@ -62,6 +62,9 @@ int freeMemory(){
 
 void* myalloc(int nBytes){
     ListBlock new = findFreeList(myFreeLists, nBytes);
+    new->size=nBytes;
+    *(new->block->header)*=STATE_BUSY;
+    *(new->block->footer)*=STATE_BUSY;
     insertUserList(myUserList,new);
 }
 int myfree(void* p){
