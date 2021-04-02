@@ -22,7 +22,7 @@ struct TestInstructions{
 
 void MainTest(struct Operation *operation);
 struct TestInstructions readFile(const char *file);
-
+int numberOfLines(const char *file);
 
 
 

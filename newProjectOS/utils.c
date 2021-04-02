@@ -58,6 +58,7 @@ struct Operation entryOftheOperation(){
 
 void MainTest(struct Operation *operation){
     //int *varibleInt;
+    initMemory(1000);
     char *variableChar;
     printf("Hello");
     int a=1;
@@ -89,6 +90,7 @@ void MainTest(struct Operation *operation){
 struct TestInstructions readFile(const char *file){
     struct TestInstructions *tests;
     tests=malloc(sizeof(struct TestInstructions));
+    int nBLines=3;
     int n,i;
     FILE *fp;
     fp=fopen(file,"r");
@@ -96,14 +98,34 @@ struct TestInstructions readFile(const char *file){
         printf("\nError : File is not present");
         exit(1);
     }
-    for(i=0;i<3;i++){
+    for(i=0;i<=nBLines;i++){
         struct Operation *operation;
         operation=malloc(sizeof(struct Operation));
         fscanf(fp,"%d %d %d %d",&operation->variable,&operation->operation,&operation->reallocValue,&operation->valueInt);
-        printf("\n %d %d %d %d",operation->variable,operation->operation,operation->reallocValue,operation->valueInt);
+
         tests->operations[i]=*operation;
         tests->nBoperations++;
     }
     fclose(fp);
     return *tests;
 }
+int numberOfLines(const char *file){
+    FILE *fptr;
+    int ctr = 0;
+    char c;
+
+    fptr = fopen(file, "r");
+    if (fptr == NULL)
+    {
+        printf("Could not open file %s", file);
+        return 0;
+    }
+    // Extract characters from file and store in character c
+    for (c = getc(fptr); c != EOF; c = getc(fptr))
+        if (c == '\n') // Increment count if this character is newline
+            ctr = ctr + 1;
+    fclose(fptr);
+    return ctr;
+}
+
+
