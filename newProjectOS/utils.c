@@ -57,21 +57,22 @@ struct Operation entryOftheOperation(){
 }
 
 void MainTest(struct Operation *operation){
-    int *varibleInt;
+    //int *varibleInt;
     char *variableChar;
     printf("Hello");
     int a=1;
     switch(a){
         case 1:
             printf("Hello");
-            //varibleInt=(int*)myalloc(sizeof(int));
-            varibleInt=operation->valueInt;
-            //printf("Valeur de la variable entier : %ls \n",varibleInt);
-            //printf("Adresse of the integer : %p\n",&varibleInt);
-            //if(operation->reallocValue!=0){
-              //  myrealloc(&varibleInt,operation->reallocValue);
-            //}
-            //myfree(&varibleInt);
+            int *varibleInt;
+            varibleInt=(int*)myalloc(sizeof(int));
+            *varibleInt=500;
+            printf("Valeur de la variable entier : %ls \n",varibleInt);
+            printf("Adresse of the integer : %p\n",&varibleInt);
+            if(operation->reallocValue!=0){
+                //realloc(&varibleInt,operation->reallocValue);
+            }
+            //free(&operation);
             printf("Sortie");
             break;
         case 2:
