@@ -8,86 +8,104 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug"/>
+				<Option working_dir="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug"/>
+				<Option working_dir="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug"/>
+				<Option working_dir="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="newProjectOS">
-				<Option output="/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/newProjectOS" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug"/>
+				<Option output="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/newProjectOS" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 newProjectOS"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 newProjectOS"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="newProjectOS/fast">
-				<Option output="/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/newProjectOS" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug"/>
+				<Option output="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/newProjectOS" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 newProjectOS/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 newProjectOS/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lespritpionnier/CLionProjects/newProjectOS/aboutDataStructure.c">
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.c">
 			<Option target="newProjectOS"/>
 		</Unit>
-		<Unit filename="/Users/lespritpionnier/CLionProjects/newProjectOS/aboutDataStructure.h">
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.h">
 			<Option target="newProjectOS"/>
 		</Unit>
-		<Unit filename="/Users/lespritpionnier/CLionProjects/newProjectOS/main.c">
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c">
 			<Option target="newProjectOS"/>
 		</Unit>
-		<Unit filename="/Users/lespritpionnier/CLionProjects/newProjectOS/CMakeLists.txt">
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h">
+			<Option target="newProjectOS"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c">
+			<Option target="newProjectOS"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/test.c">
+			<Option target="newProjectOS"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/test.h">
+			<Option target="newProjectOS"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c">
+			<Option target="newProjectOS"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.h">
+			<Option target="newProjectOS"/>
+		</Unit>
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

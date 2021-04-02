@@ -1,1 +1,1 @@
-/Library/Developer/CommandLineTools/usr/bin/cc -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/newProjectOS.dir/main.c.o CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o  -o newProjectOS 
+/usr/bin/cc -g   CMakeFiles/newProjectOS.dir/main.c.o CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o CMakeFiles/newProjectOS.dir/utils.c.o CMakeFiles/newProjectOS.dir/functions.c.o CMakeFiles/newProjectOS.dir/test.c.o  -o newProjectOS 

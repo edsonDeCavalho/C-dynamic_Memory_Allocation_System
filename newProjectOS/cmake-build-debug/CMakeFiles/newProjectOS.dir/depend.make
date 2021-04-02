@@ -4,6 +4,20 @@
 CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o: ../aboutDataStructure.c
 CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o: ../aboutDataStructure.h
 
+CMakeFiles/newProjectOS.dir/functions.c.o: ../aboutDataStructure.h
+CMakeFiles/newProjectOS.dir/functions.c.o: ../functions.c
+CMakeFiles/newProjectOS.dir/functions.c.o: ../functions.h
+
 CMakeFiles/newProjectOS.dir/main.c.o: ../aboutDataStructure.h
+CMakeFiles/newProjectOS.dir/main.c.o: ../functions.h
 CMakeFiles/newProjectOS.dir/main.c.o: ../main.c
+CMakeFiles/newProjectOS.dir/main.c.o: ../test.h
+CMakeFiles/newProjectOS.dir/main.c.o: ../utils.h
+
+CMakeFiles/newProjectOS.dir/test.c.o: ../test.c
+CMakeFiles/newProjectOS.dir/test.c.o: ../test.h
+
+CMakeFiles/newProjectOS.dir/utils.c.o: ../functions.h
+CMakeFiles/newProjectOS.dir/utils.c.o: ../utils.c
+CMakeFiles/newProjectOS.dir/utils.c.o: ../utils.h
 

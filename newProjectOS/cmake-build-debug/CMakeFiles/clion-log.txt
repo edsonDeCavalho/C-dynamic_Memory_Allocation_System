@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/lespritpionnier/CLionProjects/newProjectOS
+/snap/clion/145/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug
+-- Build files have been written to: /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug

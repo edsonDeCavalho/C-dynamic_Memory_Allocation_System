@@ -4,10 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lespritpionnier/CLionProjects/newProjectOS/aboutDataStructure.c" "/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o"
-  "/Users/lespritpionnier/CLionProjects/newProjectOS/main.c" "/Users/lespritpionnier/CLionProjects/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/main.c.o"
+  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o"
+  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/functions.c.o"
+  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/main.c.o"
+  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/test.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/test.c.o"
+  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/utils.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

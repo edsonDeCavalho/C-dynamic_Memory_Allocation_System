@@ -6,11 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/lespritpionnier/CLionProjects/newProjectOS/aboutDataStructure.h
-
-/Users/lespritpionnier/CLionProjects/newProjectOS/main.c
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/test.c
+test.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/test.h
 stdio.h
 -
-aboutDataStructure.h
-/Users/lespritpionnier/CLionProjects/newProjectOS/aboutDataStructure.h
+stdlib.h
+-
+iostream.h
+-
+
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/test.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+bits/types/FILE.h
+-
 
