@@ -58,6 +58,7 @@ void* myalloc(int nBytes){
     *(new->block->header)*=STATE_BUSY;
     *(new->block->footer)*=STATE_BUSY;
     insertUserList(myUserList,new);
+    return new->block->data;
 }
 int myfree(void* p){
     freeUserList(myUserList, p, myFreeLists);

@@ -3,4 +3,4 @@ project(newProjectOS C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(newProjectOS main.c aboutDataStructure.c aboutDataStructure.h utils.c utils.h functions.c functions.h test.c test.h)
+add_executable(newProjectOS main.c aboutDataStructure.c aboutDataStructure.h utils.c utils.h functions.c functions.h aboutDataStructure.c)

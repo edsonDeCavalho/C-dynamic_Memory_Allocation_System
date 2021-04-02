@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o"
   "CMakeFiles/newProjectOS.dir/functions.c.o"
   "CMakeFiles/newProjectOS.dir/main.c.o"
-  "CMakeFiles/newProjectOS.dir/test.c.o"
   "CMakeFiles/newProjectOS.dir/utils.c.o"
   "newProjectOS"
   "newProjectOS.pdb"

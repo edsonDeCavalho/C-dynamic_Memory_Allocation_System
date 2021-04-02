@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/functions.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/main.c.o"
-  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/test.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/test.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

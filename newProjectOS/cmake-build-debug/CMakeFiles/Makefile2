@@ -94,12 +94,12 @@ clean: CMakeFiles/newProjectOS.dir/clean
 CMakeFiles/newProjectOS.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target newProjectOS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target newProjectOS"
 .PHONY : CMakeFiles/newProjectOS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/newProjectOS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/newProjectOS.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/newProjectOS.dir/rule

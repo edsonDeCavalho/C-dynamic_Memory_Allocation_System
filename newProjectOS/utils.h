@@ -4,25 +4,27 @@
 
 struct Operation{
     int variable;
-    void* value;
+    char valueChar;
+    int valueInt;
     int operation;
     int reallocValue;
 };
 
+struct Operation entryOftheOperation();
+
 struct TestInstructions{
-    int typeMenu;
-    int taille;
     int nBoperations;
-    struct Operation *operations[];
+    struct Operation operations[4];
 };
 
 
-int getTille(struct TestInstructions testinstructions);
-int getNbOperations(struct TestInstructions testinstructions);
-struct Operation creationOfAnOperation();
-void reallocOperation(void* variable,int valeur);
-void Test(struct Operation operation);
-void freeOperation(void*variable);
+
+
+void MainTest(struct Operation *operation);
+struct TestInstructions readFile(const char *file);
+
+
+
 
 void menuInteractif();
 void menuBash();
