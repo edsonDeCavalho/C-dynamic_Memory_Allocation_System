@@ -18,9 +18,9 @@ void menuInteractif(){
     struct Operation *operation;
     operation=malloc(sizeof(struct Operation));
     *operation=entryOftheOperation();
-    printf(" Operation : %d\n",operation->operation);
+    printf("Value of the variable %d",operation->valueInt);
+    printf("Operation : %d\n",operation->operation);
     printf("Reealloc Value :%d\n",operation->reallocValue);
-    printf("Char value : %d\n",operation->valueChar);
     printf("Variable type : %d\n",operation->variable);
     MainTest(&operation);
 }
@@ -59,16 +59,23 @@ struct Operation entryOftheOperation(){
 void MainTest(struct Operation *operation){
     int *varibleInt;
     char *variableChar;
-    switch(operation->variable){
+    printf("Hello");
+    int a=1;
+    switch(a){
         case 1:
-            varibleInt=(int)myalloc(sizeof(int));
-            varibleInt=1;
-            if(operation->reallocValue!=0){
-                myrealloc(&varibleInt,operation->reallocValue);
-            }
-            myfree(&varibleInt);
+            printf("Hello");
+            //varibleInt=(int*)myalloc(sizeof(int));
+            varibleInt=operation->valueInt;
+            //printf("Valeur de la variable entier : %ls \n",varibleInt);
+            //printf("Adresse of the integer : %p\n",&varibleInt);
+            //if(operation->reallocValue!=0){
+              //  myrealloc(&varibleInt,operation->reallocValue);
+            //}
+            //myfree(&varibleInt);
+            printf("Sortie");
+            break;
         case 2:
-            variableChar=(char)myalloc(sizeof(char));
+            variableChar=(char*)myalloc(sizeof(char));
             variableChar=operation->valueChar;
             if(operation->reallocValue!=0){
                 myrealloc(&variableChar,operation->reallocValue);
