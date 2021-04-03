@@ -17,6 +17,7 @@ int main(int argc ,char **argv) {
             /**
              * mode ligne de commande
              */
+            printf("Mode Automatique\n");
             return 0;
             break;
         case 2:
@@ -29,7 +30,7 @@ int main(int argc ,char **argv) {
             if(strcmp(&(*(argv[1])),"-h")==0){
                 menuHelp();
             }
-           break;
+            break;
         case 3:
             /**
              * mode: batch
@@ -42,6 +43,7 @@ int main(int argc ,char **argv) {
                     for(int i=0;i<testsInstructions->nBoperations;i++){
                         printf("%d  \n",testsInstructions->operations[i].variable)   ;
                         /*Envoie vers MainTest*/
+                        //MainTest(testsInstructions->operations[i]);
                     }
                 }
                 else{

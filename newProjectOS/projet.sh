@@ -7,11 +7,11 @@ then
 fi
 if [ ! -r $1 ]
 then
-  echo "Fichier $1.c inaccessible en lecture"
+  echo "Fichier $1 inaccessible en lecture"
   chmod u+r $1
   exit 0
 fi
 
-./main instructions.txt
+./main -f instructions.txt
 
 exit 0

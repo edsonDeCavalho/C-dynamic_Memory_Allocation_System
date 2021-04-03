@@ -8,23 +8,28 @@
 
 
 //Tests show that void* is a kind of char*, so we move the position by unit 'byte'
-void *myMemoryPool;
-ListBlock myFreeLists[FREE_LIST_NUMBER];
-ListBlock myUserList;
+static void *myMemoryPool;
+static ListBlock myFreeLists[FREE_LIST_NUMBER];
+static ListBlock myUserList;
 
+/*
 int initMemory(int nBytes){
     int local = INIT_MEMORY_SIZE(nBytes);
-    if((myMemoryPool=(int*)malloc(INIT_MEMORY_SIZE(nBytes)))==NULL){
+    if((myMemoryPool=(void*)malloc(INIT_MEMORY_SIZE(nBytes)))==NULL){
         fprintf(stderr,"Erreur dans la allocation de la memoire initiale");
         return 1;
     }
     else{
-        printf("Memoire allueée avec succées %d \n",local);
+        printf("Memoire allueée avec succées!!!!!!! %d \n",local);
 
-        Header initHeader = myMemoryPool ;
-        Footer initFooter = myMemoryPool + local - UNIT_SIZE;
-        void *firstBlock = myMemoryPool+UNIT_SIZE;
+        Footer firstCase = myMemoryPool + local - 2*UNIT_SIZE;
+        Header lastCase = myMemoryPool + UNIT_SIZE;
+        Footer initHeader = myMemoryPool ;
+        printf("Erreur25 initHeader=%p,=%p",initHeader, myMemoryPool);
+        Header initFooter = myMemoryPool + local - UNIT_SIZE;
+        void *firstBlock = myMemoryPool+2*UNIT_SIZE;
         *initHeader = 0;
+        printf("Erreur initHeader=%p,=%p",initHeader, myMemoryPool);
         *initFooter = 0;
         firstBlock += UNIT_SIZE;
         addHeader(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
@@ -41,11 +46,11 @@ int initMemory(int nBytes){
     }
 
     short int t = 16;
-    printf("Memoire allueée avec succées %d \n",t==local);
+    printf("Memoire allueée avec succées??????????? %d \n",t==local);
 
     return 0;
 }
-
+*/
 
 int freeMemory(){
     free(myMemoryPool);

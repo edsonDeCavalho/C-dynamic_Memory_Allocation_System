@@ -3,8 +3,6 @@
 //
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
-#include <ctype.h>
 #include "utils.h"
 #include "functions.h"
 
@@ -22,7 +20,7 @@ void menuInteractif(){
     printf("Operation : %d\n",operation->operation);
     printf("Reealloc Value :%d\n",operation->reallocValue);
     printf("Variable type : %d\n",operation->variable);
-    MainTest(&operation);
+    MainTest(operation);
 }
 
 
@@ -56,9 +54,10 @@ struct Operation entryOftheOperation(){
     return *operation;
 }
 
+
 void MainTest(struct Operation *operation){
     //int *varibleInt;
-    initMemory(1000);
+    //initMemory(1000);
     char *variableChar;
     printf("Hello");
     int a=1;
@@ -66,7 +65,7 @@ void MainTest(struct Operation *operation){
         case 1:
             printf("Hello");
             int *varibleInt;
-            varibleInt=(int*)myalloc(sizeof(int));
+            //varibleInt=(int*)myalloc(40);
             *varibleInt=500;
             printf("Valeur de la variable entier : %ls \n",varibleInt);
             printf("Adresse of the integer : %p\n",&varibleInt);
@@ -77,13 +76,16 @@ void MainTest(struct Operation *operation){
             printf("Sortie");
             break;
         case 2:
-            variableChar=(char*)myalloc(sizeof(char));
-            variableChar=operation->valueChar;
+
+            variableChar=(char*)malloc(sizeof(char));
+            /*
+            *variableChar=operation->valueChar;
             if(operation->reallocValue!=0){
                 myrealloc(&variableChar,operation->reallocValue);
             }
             myfree(&varibleInt);
             break;
+             */
     }
 }
 
