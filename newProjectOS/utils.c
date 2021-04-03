@@ -1,14 +1,21 @@
-//
-// Created by nudian on 01/04/2021.
-//
+/*!
+ * \file utils.c
+ * \brief File who contains all of the structures to help doing the differents
+ * \author De Carvalho Edson , Wang Alexandre
+ * \date 3 April 2021
+ * \version 2.7
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #include "utils.h"
 #include "functions.h"
-
-
-
-
+/**
+ * \fn void menuInteractif(void)
+ * \brief First function in interactive mode, wh lunch the interactive test.
+ * \param [in] void
+ * \return void
+ * \date 3 April 2021
+ */
 void menuInteractif(){
     printf("*******************************");
     printf("\n Mod : Interactive menu\n");
@@ -22,8 +29,13 @@ void menuInteractif(){
     printf("Variable type : %d\n",operation->variable);
     MainTest(operation);
 }
-
-
+/**
+ * \fn struct Operation entryOftheOperation()
+ * \brief Second function in interactive mode, retrieves the parameters indicated by the user.
+ * \param [in] void
+ * \return  Instance of type Operation.
+ * \date 3 April 2021
+ */
 struct Operation entryOftheOperation(){
     struct Operation *operation;
     operation=malloc(sizeof(struct Operation));
@@ -53,8 +65,13 @@ struct Operation entryOftheOperation(){
     }
     return *operation;
 }
-
-
+/**
+ * \fn void MainTest(struct Operation *operation)
+ * \brief Second function in interactive mode, retrieves the parameters indicated by the user.
+ * \param [in] Operation
+ * \return void
+ * \date 3 April 2021
+ */
 void MainTest(struct Operation *operation){
     //int *varibleInt;
     //initMemory(1000);
@@ -88,7 +105,13 @@ void MainTest(struct Operation *operation){
              */
     }
 }
-
+/**
+ * \fn struct TestInstructions readFile(const char *file)
+ * \brief This function read the file with the operations instructions and bld objects of the type Operation.
+ * \param [in] file an object type char who contains the name of the file.
+ * \return TestInstructions a array with objects of the type Operation
+ * \date 3 April 2021
+ */
 struct TestInstructions readFile(const char *file){
     struct TestInstructions *tests;
     tests=malloc(sizeof(struct TestInstructions));
@@ -111,6 +134,13 @@ struct TestInstructions readFile(const char *file){
     fclose(fp);
     return *tests;
 }
+/**
+ * \fn int numberOfLines(const char *file)
+ * \brief This function read the file with the operations instructions to count the number of lines.
+ * \param [in] file an object type char who contains the name of the file.
+ * \return number of lines
+ * \date 3 April 2021
+ */
 int numberOfLines(const char *file){
     FILE *fptr;
     int ctr = 0;
