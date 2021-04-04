@@ -6,17 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.c
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.h
+stdio.h
+-
+sys/types.h
+-
+unistd.h
+-
+stdbool.h
+-
 stdlib.h
+-
+
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.h
+unistd.h
 -
 stdio.h
 -
-aboutDataStructure.h
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.h
-
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.h
-
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
+stdlib.h
+-
+time.h
+-
+ListeBlock.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.h
 
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c
 stdio.h
@@ -29,22 +41,10 @@ sys/stat.h
 -
 stdbool.h
 -
-aboutDataStructure.h
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/aboutDataStructure.h
-functions.h
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
 utils.h
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.h
-
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c
-stdlib.h
--
-stdio.h
--
-utils.h
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.h
-functions.h
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
+functions2.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.h
 
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.h
 

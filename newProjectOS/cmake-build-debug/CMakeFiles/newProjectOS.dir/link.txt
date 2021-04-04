@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/newProjectOS.dir/main.c.o CMakeFiles/newProjectOS.dir/utils.c.o CMakeFiles/newProjectOS.dir/functions.c.o CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o  -o newProjectOS 
+/usr/bin/cc -g   CMakeFiles/newProjectOS.dir/main.c.o CMakeFiles/newProjectOS.dir/utils.c.o CMakeFiles/newProjectOS.dir/functions2.c.o CMakeFiles/newProjectOS.dir/ListeBlock.c.o  -o newProjectOS 

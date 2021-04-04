@@ -1,76 +1,234 @@
-//
-// Created by nudian on 01/04/2021.
-//
-#include <stdio.h>
-#include <stdlib.h>
+/*!
+ * \file functions.c
+ * \brief File that has the main function when the program is launched,	with the 3 different mods
+ * \author De Carvalho Edson , Wang Alexandre
+ * \date 3 April 2021
+ * \version 2.7
+ */
 #include "functions.h"
-#include "aboutDataStructure.h"
+#include <stdio.h>
 
+static ListeBlock listeOfBlocksAlueted;
+static ListeBlock ListOfFreeBlocks;
+static  struct DataProgramme donnesProgramme;
 
-//Tests show that void* is a kind of char*, so we move the position by unit 'byte'
-static void *myMemoryPool;
-static ListBlock myFreeLists[FREE_LIST_NUMBER];
-static ListBlock myUserList;
-
-/*
-int initMemory(int nBytes){
-    int local = INIT_MEMORY_SIZE(nBytes);
-    if((myMemoryPool=(void*)malloc(INIT_MEMORY_SIZE(nBytes)))==NULL){
+/**
+ * Function pour recuperer un espace memoire avec
+ * malloc.
+ * @param nbytes
+ * @return creationd de l'adresse initiale et adresse max.
+ */
+void initMemory(int nbytes){
+    initUtils(nbytes);
+    donnesProgramme.tailleMemoireTotal=nbytes;
+    if((donnesProgramme.AdresseMemoireInitiale=(char*)malloc(nbytes))==NULL){
         fprintf(stderr,"Erreur dans la allocation de la memoire initiale");
-        return 1;
+        affichageStatusMemoire();
+        exit(1);
     }
     else{
-        printf("Memoire allueée avec succées!!!!!!! %d \n",local);
-
-        Footer firstCase = myMemoryPool + local - 2*UNIT_SIZE;
-        Header lastCase = myMemoryPool + UNIT_SIZE;
-        Footer initHeader = myMemoryPool ;
-        printf("Erreur25 initHeader=%p,=%p",initHeader, myMemoryPool);
-        Header initFooter = myMemoryPool + local - UNIT_SIZE;
-        void *firstBlock = myMemoryPool+2*UNIT_SIZE;
-        *initHeader = 0;
-        printf("Erreur initHeader=%p,=%p",initHeader, myMemoryPool);
-        *initFooter = 0;
-        firstBlock += UNIT_SIZE;
-        addHeader(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
-        addFooter(firstBlock,(local-2*UNIT_SIZE),STATE_FREE);
-
-        for (int i=0;i<FREE_LIST_NUMBER;i++){
-            myFreeLists[i]=(ListBlock) malloc(sizeof(struct listBlock));
-        }
-        insertFreeList(myFreeLists, firstBlock);
-
-        myUserList = (ListBlock) malloc(sizeof(struct listBlock));
-
-
+        printf("Memoire allueée avec succées \n");
+        donnesProgramme.AdresseMemoireMax=donnesProgramme.AdresseMemoireInitiale+nbytes;
+        donnesProgramme.AdresseMemoireAcuelle=donnesProgramme.AdresseMemoireInitiale;
     }
-
-    short int t = 16;
-    printf("Memoire allueée avec succées??????????? %d \n",t==local);
-
-    return 0;
+    affichageStatusMemoire();
 }
-*/
-
-int freeMemory(){
-    free(myMemoryPool);
-}
-
-
+/**
+ * Function pour alluer de la memoire pour une variable dans le
+ * espace memoire reserveé pour le programme.
+ * @param nBytes
+ * @return
+ */
 void* myalloc(int nBytes){
-    ListBlock new = findFreeList(myFreeLists, nBytes);
-    new->size=nBytes;
-    *(new->block->header)*=STATE_BUSY;
-    *(new->block->footer)*=STATE_BUSY;
-    insertUserList(myUserList,new);
-    return new->block->data;
-}
-int myfree(void* p){
-    freeUserList(myUserList, p, myFreeLists);
-}
-void* myrealloc(void *p, int nBytes){
-    myfree(p);
-    p = myalloc(nBytes);
-    return p;
 
+    int tailleVariable=nBytes;
+    /*Incrementation Memoire*/
+    char *ancienneAdresse=donnesProgramme.AdresseMemoireAcuelle;
+    if((nBytes<0) || (donnesProgramme.AdresseMemoireAcuelle>donnesProgramme.AdresseMemoireMax)){
+        fprintf(stderr,"Segmente defaoult d'hors de la memoire autorisée");
+        affichageStatusMemoire();
+        return (void*)-1;
+    }else{
+        donnesProgramme.AdresseMemoireAcuelle=tailleVariable+donnesProgramme.AdresseMemoireAcuelle;
+        //return (void *)ancienneAdresse;
+
+        /**
+         * Creation de un  Blocks
+         * A faire:
+         *   *Configuration du footer
+         *   *Configuration du header
+         *
+         */
+        /*Creation de footer (il faout configurer le footer) */
+
+        /*Creation de header*/
+        struct Block block;
+        /*Recuperation de l' adresse*/
+        //block.data=calculPourLaPage(ancienneAdresse,nBytes);
+        block.data=donnesProgramme.AdresseMemoireAcuelle;
+        block.taille=nBytes;
+        /*Ajout dans la liste*/
+        inserteteListe(&listeOfBlocksAlueted, block);
+        /*En return le block->data*/
+
+        affichageStatusMemoire();
+        return (void*) block.data;
+    }
+}
+
+void *myalloc2(int nBytes){
+    ListeBlock l;
+    if((l=getBestBlock(nBytes))==-1){
+        printf("Depacement de memoire\n");
+        return NULL;
+    }
+    else{
+        inserteteListe(&listeOfBlocksAlueted,l->block);
+        printf("Memoire by myalloc returned : %p",l->block.data);
+        return (void*) l->block.data;
+    }
+}
+
+void affichageStatusMemoire(){
+    printf("\n************************************************ \n");
+    printf("Memoire initiale: %p\n",donnesProgramme.AdresseMemoireInitiale);
+    printf("Memoire Actuelle: %p\n",donnesProgramme.AdresseMemoireAcuelle);
+    printf("Memoire Max     : %p\n",donnesProgramme.AdresseMemoireMax);
+    printf("Total de bloks alluées : %d",tailleListeBlock(listeOfBlocksAlueted));
+    printf("\n************************************************ \n");
+}
+/**
+ * \fn struct DataProgramme createDetailsProgrmme(int nBytes)
+ * \brief Fonction who creates and initializes the global variable DataProgramme
+ * \param Integer with the size of the memory.
+ * \return Instance of the structure DataProgramme.
+ *  DataProgramme  store the parameters of the progemme.
+ */
+struct DataProgramme createDetailsProgrmme(int nBytes){
+    struct DataProgramme *d;
+    d=malloc(sizeof(struct DataProgramme));
+    d->tailleMemoireTotal=nBytes;
+    d->AdresseMemoireAcuelle=NULL;
+    d->AdresseMemoireMax=NULL;
+    d->AdresseMemoireInitiale=NULL;
+    d->taillePageDuSysteme=NULL;
+    d->taillePageDuSysteme=getpagesize();
+    d->tailleMemoireTotal=NULL;
+    return *d;
+}
+/**
+ * \fn void initUtils(int nBytes)
+ * \brief Initialize the lists that the memory blocks will contain.
+ * \param Integer with the size of the memory.
+ * \return (void).
+ */
+void initUtils(int nBytes){
+    donnesProgramme=createDetailsProgrmme(nBytes);
+    listeOfBlocksAlueted=initListe();
+    ListOfFreeBlocks=initListe();
+}
+/**
+ * \fn int myfree(void *p)
+ * \brief Deallocation of a zone addressed by a pointer.
+ * \param[in,out] void .
+ * \return void.
+ */
+int myfree(void *p){
+    int i = 0;
+    afficheListe(listeOfBlocksAlueted);
+    while(listeOfBlocksAlueted != NULL) {
+        i++;
+        if(listeOfBlocksAlueted->block.data == p) {
+            printf("The block has been delated \n");
+            free(listeOfBlocksAlueted);
+            free(p);
+            listeOfBlocksAlueted = suivant(listeOfBlocksAlueted);
+        }
+        afficheListe(listeOfBlocksAlueted);
+        afficheListe(ListOfFreeBlocks);
+    }
+    return i;
+}
+/**
+ * \fn void divisionOfMemoryZone()
+ * \brief Divides the memory zone i block.
+ * \param[in,out] void .
+ * \return void.
+ * Divides the memory zone in different size blocks of 4 , 8 and random between 9 and 100.
+ */
+void divisionOfMemoryZone(){
+    int *memp=donnesProgramme.AdresseMemoireInitiale+donnesProgramme.tailleMemoireTotal;
+    int mD=donnesProgramme.tailleMemoireTotal/2;
+    char *AmD=donnesProgramme.AdresseMemoireInitiale+mD;
+    char *AmD2=donnesProgramme.AdresseMemoireInitiale+mD+mD;
+    char *AmD3=donnesProgramme.AdresseMemoireInitiale+mD+mD+mD;
+    char *AmD4=donnesProgramme.AdresseMemoireMax;
+    int pointTap=0;
+    srand( time( NULL ) );
+    int searchedValue = rand() % 101;
+    /**
+     * Division for 4 bits
+     */
+     char *i=donnesProgramme.AdresseMemoireAcuelle;
+     while(i<AmD && i<donnesProgramme.AdresseMemoireMax){
+         i=i+4;
+         struct Block block;
+         block.taille=4;
+         block.data=i;
+         inserteteListe(&ListOfFreeBlocks, block);
+     }
+    /**
+    * Division for 8 bits
+    */
+     printf("AMd2 :\n");
+     char *f=AmD;
+     while(f<AmD2 && f<donnesProgramme.AdresseMemoireMax){
+         f=f+8;
+         struct Block block;
+         block.taille=8;
+         block.data=f;
+         inserteteListe(&ListOfFreeBlocks, block);
+     }
+     /**
+      * Divison for 2²
+      */
+      printf("AMd3\n");
+      int a=4;
+      char *e=AmD2;
+      while(e<AmD3 && e<donnesProgramme.AdresseMemoireMax){
+          a=a*2;
+          e=e+a;
+          struct Block block;
+          block.taille=a;
+          block.data=e;
+          inserteteListe(&ListOfFreeBlocks, block);
+      }
+      /**
+       * Divison for 5⁵ (if it's possible)
+       */
+    int b=5;
+    char *t=AmD3;
+    while(t<AmD4 && t<donnesProgramme.AdresseMemoireMax){
+        a=a*5;
+        t=t+a;
+        struct Block block;
+        block.taille=a;
+        block.data=t;
+        inserteteListe(&ListOfFreeBlocks, block);
+    }
+}
+/**
+ * \fn ListeBlock getBestBlock(int nBytes)
+ * \brief Returns the list with the adequate size to the variable.
+ * \param[in] Integer size of the variable.
+ * \return Instance of the object ListeBlock if they finds a list, else they return -1.
+ */
+ListeBlock getBestBlock(int nBytes){
+    while(ListOfFreeBlocks != NULL){
+        if(nBytes==ListOfFreeBlocks->block.taille){
+            return ListOfFreeBlocks;
+        }
+        ListOfFreeBlocks=suivant(ListOfFreeBlocks);
+    }
+    return -1;
 }

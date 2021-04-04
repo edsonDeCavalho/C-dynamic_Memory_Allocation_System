@@ -143,59 +143,59 @@ newProjectOS/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/build
 .PHONY : newProjectOS/fast
 
-aboutDataStructure.o: aboutDataStructure.c.o
+ListeBlock.o: ListeBlock.c.o
 
-.PHONY : aboutDataStructure.o
-
-# target to build an object file
-aboutDataStructure.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/aboutDataStructure.c.o
-.PHONY : aboutDataStructure.c.o
-
-aboutDataStructure.i: aboutDataStructure.c.i
-
-.PHONY : aboutDataStructure.i
-
-# target to preprocess a source file
-aboutDataStructure.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/aboutDataStructure.c.i
-.PHONY : aboutDataStructure.c.i
-
-aboutDataStructure.s: aboutDataStructure.c.s
-
-.PHONY : aboutDataStructure.s
-
-# target to generate assembly for a file
-aboutDataStructure.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/aboutDataStructure.c.s
-.PHONY : aboutDataStructure.c.s
-
-functions.o: functions.c.o
-
-.PHONY : functions.o
+.PHONY : ListeBlock.o
 
 # target to build an object file
-functions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions.c.o
-.PHONY : functions.c.o
+ListeBlock.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/ListeBlock.c.o
+.PHONY : ListeBlock.c.o
 
-functions.i: functions.c.i
+ListeBlock.i: ListeBlock.c.i
 
-.PHONY : functions.i
+.PHONY : ListeBlock.i
 
 # target to preprocess a source file
-functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions.c.i
-.PHONY : functions.c.i
+ListeBlock.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/ListeBlock.c.i
+.PHONY : ListeBlock.c.i
 
-functions.s: functions.c.s
+ListeBlock.s: ListeBlock.c.s
 
-.PHONY : functions.s
+.PHONY : ListeBlock.s
 
 # target to generate assembly for a file
-functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions.c.s
-.PHONY : functions.c.s
+ListeBlock.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/ListeBlock.c.s
+.PHONY : ListeBlock.c.s
+
+functions2.o: functions2.c.o
+
+.PHONY : functions2.o
+
+# target to build an object file
+functions2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions2.c.o
+.PHONY : functions2.c.o
+
+functions2.i: functions2.c.i
+
+.PHONY : functions2.i
+
+# target to preprocess a source file
+functions2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions2.c.i
+.PHONY : functions2.c.i
+
+functions2.s: functions2.c.s
+
+.PHONY : functions2.s
+
+# target to generate assembly for a file
+functions2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions2.c.s
+.PHONY : functions2.c.s
 
 main.o: main.c.o
 
@@ -260,12 +260,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... newProjectOS"
-	@echo "... aboutDataStructure.o"
-	@echo "... aboutDataStructure.i"
-	@echo "... aboutDataStructure.s"
-	@echo "... functions.o"
-	@echo "... functions.i"
-	@echo "... functions.s"
+	@echo "... ListeBlock.o"
+	@echo "... ListeBlock.i"
+	@echo "... ListeBlock.s"
+	@echo "... functions2.o"
+	@echo "... functions2.i"
+	@echo "... functions2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

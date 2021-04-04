@@ -11,9 +11,10 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <stdbool.h>
-#include "aboutDataStructure.h"
-#include "functions.h"
+//#include "aboutDataStructure.h"
+//#include "functions.h"
 #include "utils.h"
+#include "functions.h"
 /**
  * Declaration of the functions used to help in the tests
  */
@@ -30,13 +31,25 @@ bool file_exists (char *filename);
 
 int main(int argc ,char **argv) {
     /*En function de la taille du tableau avec les argumets en prcede a effectuer un mode*/
+    int a=0;
+    struct test1 *t;
+    t=malloc(sizeof(struct test1));
+    printf("taille int : %d",sizeof (a));
+    printf("taille test1 : %d \n",sizeof(t));
+
     switch(argc) {
         case 1:
             /**
              * mode ligne de commande
              */
-            printf("Mode Automatique\n");
-            return 0;
+            initMemory(4);
+            divisionOfMemoryZone();
+            int *a;
+            a=(int*)myalloc2(2*sizeof(a));
+            printf("Adresse de %p",a);
+            myfree(a);
+            //*a=*a++;
+            //menuInteractif();
             break;
         case 2:
             /**

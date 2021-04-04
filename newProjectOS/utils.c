@@ -82,13 +82,13 @@ void MainTest(struct Operation *operation){
         case 1:
             printf("Hello");
             int *varibleInt;
-            //varibleInt=(int*)myalloc(40);
+            varibleInt=(int*)myalloc(40);
             *varibleInt=500;
             printf("Valeur de la variable entier : %ls \n",varibleInt);
             printf("Adresse of the integer : %p\n",&varibleInt);
-            if(operation->reallocValue!=0){
+           /* if(operation->reallocValue!=0){
                 //realloc(&varibleInt,operation->reallocValue);
-            }
+            }*/
             //free(&operation);
             printf("Sortie");
             break;

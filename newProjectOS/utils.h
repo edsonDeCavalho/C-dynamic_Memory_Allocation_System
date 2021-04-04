@@ -15,9 +15,8 @@
 struct Operation{
     int variable; /*!< Represents the type of variable that the users ca choose. */
     char valueChar;
-    int valueInt;
     int operation;  /*!< Object who store the operation choosen by the user. */
-    int reallocValue; /*!< Object who store the value of an reallc. */
+    int reallocValue; /*!< Object who store the value of an reallocation. */
 };
 
 struct Operation entryOftheOperation();
@@ -39,3 +38,9 @@ void MainTest(struct Operation *operation);
 struct TestInstructions readFile(const char *file);
 int numberOfLines(const char *file);
 void menuInteractif();
+
+struct test1{
+    int a;
+    int b;
+    int c;
+};
