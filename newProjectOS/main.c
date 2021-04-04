@@ -31,17 +31,13 @@ bool file_exists (char *filename);
 
 int main(int argc ,char **argv) {
     /*En function de la taille du tableau avec les argumets en prcede a effectuer un mode*/
-    int a=0;
-    struct test1 *t;
-    t=malloc(sizeof(struct test1));
-    printf("taille int : %d",sizeof (a));
-    printf("taille test1 : %d \n",sizeof(t));
 
     switch(argc) {
         case 1:
             /**
              * mode ligne de commande
              */
+            initMemory(1000);
             menuInteractif();
             break;
         case 2:

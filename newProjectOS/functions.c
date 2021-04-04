@@ -35,48 +35,7 @@ void initMemory(int nbytes){
     displayMemoryStatus();
     divisionOfMemoryZone();
 }
-/**
- * Function pour alluer de la memoire pour une variable dans le
- * espace memoire reserveé pour le programme.
- * @param nBytes
- * @return
- */
-void* myalloc(int nBytes){
 
-    int tailleVariable=nBytes;
-    /*Incrementation Memoire*/
-    char *ancienneAdresse=donnesProgramme.AdresseMemoireAcuelle;
-    if((nBytes<0) || (donnesProgramme.AdresseMemoireAcuelle>donnesProgramme.AdresseMemoireMax)){
-        fprintf(stderr,"Segmente defaoult d'hors de la memoire autorisée");
-        displayMemoryStatus();
-        return (void*)-1;
-    }else{
-        donnesProgramme.AdresseMemoireAcuelle=tailleVariable+donnesProgramme.AdresseMemoireAcuelle;
-        //return (void *)ancienneAdresse;
-
-        /**
-         * Creation de un  Blocks
-         * A faire:
-         *   *Configuration du footer
-         *   *Configuration du header
-         *
-         */
-        /*Creation de footer (il faout configurer le footer) */
-
-        /*Creation de header*/
-        struct Block block;
-        /*Recuperation de l' adresse*/
-        //block.data=calculPourLaPage(ancienneAdresse,nBytes);
-        block.data=donnesProgramme.AdresseMemoireAcuelle;
-        block.taille=nBytes;
-        /*Ajout dans la liste*/
-        inserteteListe(&listeOfBlocksAlueted, block);
-        /*En return le block->data*/
-
-        displayMemoryStatus();
-        return (void*) block.data;
-    }
-}
 /**
  * \fn void *myalloc(int nBytes)
  * \brief Function to go from memory for a variable.
@@ -152,13 +111,13 @@ int myfree(void *p){
     while(listeOfBlocksAlueted != NULL) {
         i++;
         if(listeOfBlocksAlueted->block.data == p) {
-            printf("The block has been delated \n");
+            printf("\n ********The block has been deleted***** \n");
             free(listeOfBlocksAlueted);
-            free(p);
             listeOfBlocksAlueted = next(listeOfBlocksAlueted);
+            p=NULL;
         }
     }
-    return i;
+
 }
 /**
  * \fn void divisionOfMemoryZone()
@@ -191,7 +150,6 @@ void divisionOfMemoryZone(){
     /**
     * Division for 8 bits
     */
-     printf("AMd2 :\n");
      char *f=AmD;
      while(f<AmD2 && f<donnesProgramme.AdresseMemoireMax){
          f=f+8;
@@ -203,7 +161,6 @@ void divisionOfMemoryZone(){
      /**
       * Divison for 2²
       */
-      printf("AMd3\n");
       int a=4;
       char *e=AmD2;
       while(e<AmD3 && e<donnesProgramme.AdresseMemoireMax){
@@ -236,7 +193,7 @@ void divisionOfMemoryZone(){
  */
 ListeBlock getBestBlock(int nBytes){
     while(ListOfFreeBlocks != NULL){
-        if(nBytes==ListOfFreeBlocks->block.taille){
+        if(nBytes==ListOfFreeBlocks->block.taille || nBytes < ListOfFreeBlocks->block.taille){
             return ListOfFreeBlocks;
         }
         ListOfFreeBlocks= next(ListOfFreeBlocks);
