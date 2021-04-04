@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/ListeBlock.c.o"
-  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/functions2.c.o"
+  "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/functions.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/main.c.o"
   "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c" "/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles/newProjectOS.dir/utils.c.o"
   )

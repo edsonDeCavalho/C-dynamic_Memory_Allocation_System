@@ -84,10 +84,10 @@
 		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.h">
 			<Option target="newProjectOS"/>
 		</Unit>
-		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.c">
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c">
 			<Option target="newProjectOS"/>
 		</Unit>
-		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.h">
+		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h">
 			<Option target="newProjectOS"/>
 		</Unit>
 		<Unit filename="/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c">

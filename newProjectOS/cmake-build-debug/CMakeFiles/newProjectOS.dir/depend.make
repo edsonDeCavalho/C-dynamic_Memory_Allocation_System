@@ -4,17 +4,17 @@
 CMakeFiles/newProjectOS.dir/ListeBlock.c.o: ../ListeBlock.c
 CMakeFiles/newProjectOS.dir/ListeBlock.c.o: ../ListeBlock.h
 
-CMakeFiles/newProjectOS.dir/functions2.c.o: ../ListeBlock.h
-CMakeFiles/newProjectOS.dir/functions2.c.o: ../functions2.c
-CMakeFiles/newProjectOS.dir/functions2.c.o: ../functions2.h
+CMakeFiles/newProjectOS.dir/functions.c.o: ../ListeBlock.h
+CMakeFiles/newProjectOS.dir/functions.c.o: ../functions.c
+CMakeFiles/newProjectOS.dir/functions.c.o: ../functions.h
 
 CMakeFiles/newProjectOS.dir/main.c.o: ../ListeBlock.h
-CMakeFiles/newProjectOS.dir/main.c.o: ../functions2.h
+CMakeFiles/newProjectOS.dir/main.c.o: ../functions.h
 CMakeFiles/newProjectOS.dir/main.c.o: ../main.c
 CMakeFiles/newProjectOS.dir/main.c.o: ../utils.h
 
 CMakeFiles/newProjectOS.dir/utils.c.o: ../ListeBlock.h
-CMakeFiles/newProjectOS.dir/utils.c.o: ../functions2.h
+CMakeFiles/newProjectOS.dir/utils.c.o: ../functions.h
 CMakeFiles/newProjectOS.dir/utils.c.o: ../utils.c
 CMakeFiles/newProjectOS.dir/utils.c.o: ../utils.h
 

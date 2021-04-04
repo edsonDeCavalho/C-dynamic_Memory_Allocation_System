@@ -42,7 +42,7 @@ struct Operation entryOftheOperation(){
 
     printf(" \n Select the nature of the variable:\n");
     printf("1: int\n");
-    printf("2: char\n");
+    printf("2: structure test1\n");
     int scan;
     scanf("%d",&scan);
     operation->variable=scan;
@@ -73,36 +73,69 @@ struct Operation entryOftheOperation(){
  * \date 3 April 2021
  */
 void MainTest(struct Operation *operation){
-    //int *varibleInt;
-    //initMemory(1000);
-    char *variableChar;
-    printf("Hello");
-    int a=1;
-    switch(a){
+    int *varibleInt;
+    struct test1 *variableStruct;
+    switch(operation->variable){
         case 1:
-            printf("Hello");
-            int *varibleInt;
-            varibleInt=(int*)myalloc(40);
-            *varibleInt=500;
-            printf("Valeur de la variable entier : %ls \n",varibleInt);
-            printf("Adresse of the integer : %p\n",&varibleInt);
-           /* if(operation->reallocValue!=0){
-                //realloc(&varibleInt,operation->reallocValue);
-            }*/
-            //free(&operation);
-            printf("Sortie");
+            varibleInt=(int*)myalloc(sizeof(int));
+            varibleInt=operation->valueInt;
+            printf("************************************\n");
+            printf("After Allocation of the integer \n");
+            printf("Value of the integer : %d \n",varibleInt);
+            printf("Address of the integer : %p\n",&varibleInt);
+            printf("************************************\n");
+            if(operation->reallocValue!=0){
+                //reaoolc
+                printf("************************************\n");
+                printf("After Reallocation of the integer \n ");
+                printf("Value of the integer : %d \n",varibleInt);
+                printf("Address of the integer : %p\n",&varibleInt);
+                printf("************************************\n");
+            }
+            myfree(varibleInt);
+            printf("************************************\n");
+            printf("After liberation of memory of the integer \n");
+            printf("Value of the integer : %ls \n",varibleInt);
+            printf("Address of the integer : %p\n",&varibleInt);
+            printf("************************************\n");
             break;
         case 2:
-
-            variableChar=(char*)malloc(sizeof(char));
-            /*
-            *variableChar=operation->valueChar;
+            variableStruct=(struct test1 *)myalloc(sizeof(struct test1 *));
+            variableStruct->a=operation->valueInt;
+            variableStruct->b=operation->valueInt;
+            variableStruct->c=operation->valueInt;
+            printf("************************************\n");
+            printf("After Allocation of the test structure \n");
+            printf("Value of a : %ls \n",variableStruct->a);
+            printf("Value of a : %ls \n",variableStruct->b);
+            printf("Value of a : %ls \n",variableStruct->c);
+            printf("Address of a : %p\n",&variableStruct->a);
+            printf("Address of b : %p\n",&variableStruct->b);
+            printf("Address of c : %p\n",&variableStruct->c);
+            printf("************************************\n");
             if(operation->reallocValue!=0){
-                myrealloc(&variableChar,operation->reallocValue);
+                //reaoolc
+                printf("************************************\n");
+                printf("After Reallocation of the test structure \n");
+                printf("Value of a : %ls \n",variableStruct->a);
+                printf("Value of a : %ls \n",variableStruct->b);
+                printf("Value of a : %ls \n",variableStruct->c);
+                printf("Address of a : %p\n",&variableStruct->a);
+                printf("Address of b : %p\n",&variableStruct->b);
+                printf("Address of c : %p\n",&variableStruct->c);
+                printf("************************************\n");
             }
-            myfree(&varibleInt);
+            myfree(varibleInt);
+            printf("************************************\n");
+            printf("After liberation of memory the test structure \n");
+            printf("Value of a : %ls \n",variableStruct->a);
+            printf("Value of a : %ls \n",variableStruct->b);
+            printf("Value of a : %ls \n",variableStruct->c);
+            printf("Address of a : %p\n",&variableStruct->a);
+            printf("Address of b : %p\n",&variableStruct->b);
+            printf("Address of c : %p\n",&variableStruct->c);
+            printf("************************************\n");
             break;
-             */
     }
 }
 /**

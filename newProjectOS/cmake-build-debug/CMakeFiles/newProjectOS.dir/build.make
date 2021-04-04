@@ -103,18 +103,18 @@ CMakeFiles/newProjectOS.dir/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/newProjectOS.dir/utils.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c -o CMakeFiles/newProjectOS.dir/utils.c.s
 
-CMakeFiles/newProjectOS.dir/functions2.c.o: CMakeFiles/newProjectOS.dir/flags.make
-CMakeFiles/newProjectOS.dir/functions2.c.o: ../functions2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/newProjectOS.dir/functions2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/newProjectOS.dir/functions2.c.o   -c /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.c
+CMakeFiles/newProjectOS.dir/functions.c.o: CMakeFiles/newProjectOS.dir/flags.make
+CMakeFiles/newProjectOS.dir/functions.c.o: ../functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/newProjectOS.dir/functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/newProjectOS.dir/functions.c.o   -c /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c
 
-CMakeFiles/newProjectOS.dir/functions2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/newProjectOS.dir/functions2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.c > CMakeFiles/newProjectOS.dir/functions2.c.i
+CMakeFiles/newProjectOS.dir/functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/newProjectOS.dir/functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c > CMakeFiles/newProjectOS.dir/functions.c.i
 
-CMakeFiles/newProjectOS.dir/functions2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/newProjectOS.dir/functions2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.c -o CMakeFiles/newProjectOS.dir/functions2.c.s
+CMakeFiles/newProjectOS.dir/functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/newProjectOS.dir/functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c -o CMakeFiles/newProjectOS.dir/functions.c.s
 
 CMakeFiles/newProjectOS.dir/ListeBlock.c.o: CMakeFiles/newProjectOS.dir/flags.make
 CMakeFiles/newProjectOS.dir/ListeBlock.c.o: ../ListeBlock.c
@@ -133,7 +133,7 @@ CMakeFiles/newProjectOS.dir/ListeBlock.c.s: cmake_force
 newProjectOS_OBJECTS = \
 "CMakeFiles/newProjectOS.dir/main.c.o" \
 "CMakeFiles/newProjectOS.dir/utils.c.o" \
-"CMakeFiles/newProjectOS.dir/functions2.c.o" \
+"CMakeFiles/newProjectOS.dir/functions.c.o" \
 "CMakeFiles/newProjectOS.dir/ListeBlock.c.o"
 
 # External object files for target newProjectOS
@@ -141,7 +141,7 @@ newProjectOS_EXTERNAL_OBJECTS =
 
 newProjectOS: CMakeFiles/newProjectOS.dir/main.c.o
 newProjectOS: CMakeFiles/newProjectOS.dir/utils.c.o
-newProjectOS: CMakeFiles/newProjectOS.dir/functions2.c.o
+newProjectOS: CMakeFiles/newProjectOS.dir/functions.c.o
 newProjectOS: CMakeFiles/newProjectOS.dir/ListeBlock.c.o
 newProjectOS: CMakeFiles/newProjectOS.dir/build.make
 newProjectOS: CMakeFiles/newProjectOS.dir/link.txt

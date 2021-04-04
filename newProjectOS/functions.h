@@ -1,3 +1,10 @@
+/*!
+ * \file functions.c
+ * \brief The main memory management functions are declare in this file.
+ * \author De Carvalho Edson , Wang Alexandre
+ * \date 3 April 2021
+ * \version 2.7
+ */
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,9 +12,6 @@
 
 #include "ListeBlock.h"
 
-//
-// Created by nudian on 28/03/2021.
-//
 struct DataProgramme {
     char *AdresseMemoireInitiale;
     char *AdresseMemoireMax;
@@ -15,17 +19,18 @@ struct DataProgramme {
     int taillePageDuSysteme;
     int tailleMemoireTotal;
 };
-
+/**
+ *  \brief Funtions of memory management.
+ */
 void initMemory(int nbytes);
 void* myalloc(int nBytes);
 void *myalloc2(int nBytes);
 int myfree(void *p);
-
+/**
+ * \brief Fonctions to help in the management of the memory
+ */
 ListeBlock getBestBlock(int nBytes);
 void divisionOfMemoryZone();
-void affichageStatusMemoire();
+void displayMemoryStatus();
 void initUtils(int nBytes);
-void setTailleDePageSysteme();
-int calculTaille(int tailleVariable);
-void * calculPourLaPage(char *ancienneAdresse, int nBytes);
 struct DataProgramme createDetailsProgrmme(int nBytes);

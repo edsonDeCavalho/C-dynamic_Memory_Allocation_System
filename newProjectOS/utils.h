@@ -15,8 +15,9 @@
 struct Operation{
     int variable; /*!< Represents the type of variable that the users ca choose. */
     char valueChar;
+    int valueInt;
     int operation;  /*!< Object who store the operation choosen by the user. */
-    int reallocValue; /*!< Object who store the value of an reallocation. */
+    int reallocValue; /*!< Object who store the value of an reallc. */
 };
 
 struct Operation entryOftheOperation();

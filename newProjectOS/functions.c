@@ -1,6 +1,6 @@
 /*!
  * \file functions.c
- * \brief File that has the main function when the program is launched,	with the 3 different mods
+ * \brief The main memory management functions are implemented in this file.
  * \author De Carvalho Edson , Wang Alexandre
  * \date 3 April 2021
  * \version 2.7
@@ -13,17 +13,18 @@ static ListeBlock ListOfFreeBlocks;
 static  struct DataProgramme donnesProgramme;
 
 /**
- * Function pour recuperer un espace memoire avec
- * malloc.
- * @param nbytes
- * @return creationd de l'adresse initiale et adresse max.
+ * \fn void *myalloc(int nBytes)
+ * \brief Function who makes the allocation for the memory space for the program.
+ * \param nteger with the size of the variable.
+ * \return Adresse ou NULL.
+ *
  */
 void initMemory(int nbytes){
     initUtils(nbytes);
     donnesProgramme.tailleMemoireTotal=nbytes;
     if((donnesProgramme.AdresseMemoireInitiale=(char*)malloc(nbytes))==NULL){
         fprintf(stderr,"Erreur dans la allocation de la memoire initiale");
-        affichageStatusMemoire();
+        displayMemoryStatus();
         exit(1);
     }
     else{
@@ -31,7 +32,8 @@ void initMemory(int nbytes){
         donnesProgramme.AdresseMemoireMax=donnesProgramme.AdresseMemoireInitiale+nbytes;
         donnesProgramme.AdresseMemoireAcuelle=donnesProgramme.AdresseMemoireInitiale;
     }
-    affichageStatusMemoire();
+    displayMemoryStatus();
+    divisionOfMemoryZone();
 }
 /**
  * Function pour alluer de la memoire pour une variable dans le
@@ -46,7 +48,7 @@ void* myalloc(int nBytes){
     char *ancienneAdresse=donnesProgramme.AdresseMemoireAcuelle;
     if((nBytes<0) || (donnesProgramme.AdresseMemoireAcuelle>donnesProgramme.AdresseMemoireMax)){
         fprintf(stderr,"Segmente defaoult d'hors de la memoire autorisée");
-        affichageStatusMemoire();
+        displayMemoryStatus();
         return (void*)-1;
     }else{
         donnesProgramme.AdresseMemoireAcuelle=tailleVariable+donnesProgramme.AdresseMemoireAcuelle;
@@ -71,11 +73,17 @@ void* myalloc(int nBytes){
         inserteteListe(&listeOfBlocksAlueted, block);
         /*En return le block->data*/
 
-        affichageStatusMemoire();
+        displayMemoryStatus();
         return (void*) block.data;
     }
 }
-
+/**
+ * \fn void *myalloc(int nBytes)
+ * \brief Function to go from memory for a variable.
+ * \param nteger with the size of the variable.
+ * \return Adresse ou NULL.
+ *  Function to go from memory for a variable to the memory space reserved for the program.
+ */
 void *myalloc2(int nBytes){
     ListeBlock l;
     if((l=getBestBlock(nBytes))==-1){
@@ -88,8 +96,14 @@ void *myalloc2(int nBytes){
         return (void*) l->block.data;
     }
 }
-
-void affichageStatusMemoire(){
+/**
+ * \fn void displayMemoryStatus()
+ * \brief Fonction who cdisplays the status of the memory.
+ * \param Integer with the size of the memory.
+ * \return Instance of the structure DataProgramme.
+ *  DataProgramme  store the parameters of the progemme.
+ */
+void displayMemoryStatus(){
     printf("\n************************************************ \n");
     printf("Memoire initiale: %p\n",donnesProgramme.AdresseMemoireInitiale);
     printf("Memoire Actuelle: %p\n",donnesProgramme.AdresseMemoireAcuelle);
@@ -135,17 +149,14 @@ void initUtils(int nBytes){
  */
 int myfree(void *p){
     int i = 0;
-    afficheListe(listeOfBlocksAlueted);
     while(listeOfBlocksAlueted != NULL) {
         i++;
         if(listeOfBlocksAlueted->block.data == p) {
             printf("The block has been delated \n");
             free(listeOfBlocksAlueted);
             free(p);
-            listeOfBlocksAlueted = suivant(listeOfBlocksAlueted);
+            listeOfBlocksAlueted = next(listeOfBlocksAlueted);
         }
-        afficheListe(listeOfBlocksAlueted);
-        afficheListe(ListOfFreeBlocks);
     }
     return i;
 }
@@ -228,7 +239,7 @@ ListeBlock getBestBlock(int nBytes){
         if(nBytes==ListOfFreeBlocks->block.taille){
             return ListOfFreeBlocks;
         }
-        ListOfFreeBlocks=suivant(ListOfFreeBlocks);
+        ListOfFreeBlocks= next(ListOfFreeBlocks);
     }
     return -1;
 }

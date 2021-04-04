@@ -42,20 +42,14 @@ int main(int argc ,char **argv) {
             /**
              * mode ligne de commande
              */
-            initMemory(4);
-            divisionOfMemoryZone();
-            int *a;
-            a=(int*)myalloc2(2*sizeof(a));
-            printf("Adresse de %p",a);
-            myfree(a);
-            //*a=*a++;
-            //menuInteractif();
+            menuInteractif();
             break;
         case 2:
             /**
              * mode: interactiv
              */
             if (strcmp(&(*(argv[1])),"-i")==0){
+                initMemory(500);
                 menuInteractif();
             }
             if(strcmp(&(*(argv[1])),"-h")==0){

@@ -18,7 +18,7 @@ stdbool.h
 stdlib.h
 -
 
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
 unistd.h
 -
 stdio.h
@@ -30,21 +30,15 @@ time.h
 ListeBlock.h
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.h
 
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c
-stdio.h
--
-string.h
--
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c
 stdlib.h
 -
-sys/stat.h
--
-stdbool.h
+stdio.h
 -
 utils.h
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.h
-functions2.h
-/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions2.h
+functions.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
 
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.h
 

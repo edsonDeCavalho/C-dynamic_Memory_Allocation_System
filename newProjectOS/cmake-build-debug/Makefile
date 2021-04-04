@@ -170,32 +170,32 @@ ListeBlock.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/ListeBlock.c.s
 .PHONY : ListeBlock.c.s
 
-functions2.o: functions2.c.o
+functions.o: functions.c.o
 
-.PHONY : functions2.o
+.PHONY : functions.o
 
 # target to build an object file
-functions2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions2.c.o
-.PHONY : functions2.c.o
+functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions.c.o
+.PHONY : functions.c.o
 
-functions2.i: functions2.c.i
+functions.i: functions.c.i
 
-.PHONY : functions2.i
+.PHONY : functions.i
 
 # target to preprocess a source file
-functions2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions2.c.i
-.PHONY : functions2.c.i
+functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions.c.i
+.PHONY : functions.c.i
 
-functions2.s: functions2.c.s
+functions.s: functions.c.s
 
-.PHONY : functions2.s
+.PHONY : functions.s
 
 # target to generate assembly for a file
-functions2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions2.c.s
-.PHONY : functions2.c.s
+functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/newProjectOS.dir/build.make CMakeFiles/newProjectOS.dir/functions.c.s
+.PHONY : functions.c.s
 
 main.o: main.c.o
 
@@ -263,9 +263,9 @@ help:
 	@echo "... ListeBlock.o"
 	@echo "... ListeBlock.i"
 	@echo "... ListeBlock.s"
-	@echo "... functions2.o"
-	@echo "... functions2.i"
-	@echo "... functions2.s"
+	@echo "... functions.o"
+	@echo "... functions.i"
+	@echo "... functions.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
