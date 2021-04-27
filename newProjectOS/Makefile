@@ -2,7 +2,7 @@
 # Groupe :( DE CARVALHO EDSON , WANG ALEXANDRE )
 # Here you will find the makefile of our project the launch of our file copulatory and the
 #lunch of the production of Doxygen documentation.
-all:prog clean #doxygen
+all:prog clean doxygen
 utils.o : functions.h utils.h utils.c ListeBlock.o
 	gcc -c utils.c
 functions.o : ListeBlock.h functions.h functions.c

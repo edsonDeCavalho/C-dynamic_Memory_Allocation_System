@@ -29,6 +29,7 @@ struct Block {
  */
 typedef struct cellule
 {
+    int used;
     struct Block block;
     struct cellule *suivant;
 }*ListeBlock;

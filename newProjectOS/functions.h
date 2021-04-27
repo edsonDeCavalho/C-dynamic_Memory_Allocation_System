@@ -23,9 +23,9 @@ struct DataProgramme {
  *  \brief Funtions of memory management.
  */
 void initMemory(int nbytes);
-void* myalloc(int nBytes);
-void *myalloc2(int nBytes);
+void *myalloc(int nBytes);
 int myfree(void *p);
+void *myrealloc(void *p,int newSize);
 /**
  * \brief Fonctions to help in the management of the memory
  */

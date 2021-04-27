@@ -38,7 +38,9 @@ int main(int argc ,char **argv) {
              * mode ligne de commande
              */
             initMemory(1000);
-            menuInteractif();
+            int *a=myalloc(sizeof(int));
+            *a=3;
+            myfree(a);
             break;
         case 2:
             /**
@@ -62,9 +64,7 @@ int main(int argc ,char **argv) {
                     testsInstructions=malloc(sizeof(struct TestInstructions));
                     *testsInstructions=readFile(argv[2]);
                     for(int i=0;i<testsInstructions->nBoperations;i++){
-                        printf("%d  \n",testsInstructions->operations[i].variable)   ;
-                        /*Envoie vers MainTest*/
-                        //MainTest(&testsInstructions->operations[i]);
+                        MainTest(&testsInstructions->operations[i]);
                     }
                 }
                 else{

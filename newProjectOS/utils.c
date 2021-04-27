@@ -58,7 +58,7 @@ struct Operation entryOftheOperation(){
     }
     printf("Select a value for the variable:\n");
     if(operation->variable==2){
-        scanf("%c",&operation->valueChar);
+        scanf("%d",&operation->valueInt);
     }
     else{
         scanf("%d",&operation->valueInt);
@@ -74,13 +74,12 @@ struct Operation entryOftheOperation(){
  */
 void MainTest(struct Operation *operation){
     int *varibleInt=NULL;
-    char *variableChar;
     struct test1 *variableStruct;
     switch(operation->variable){
         case 1:
-            varibleInt=(int*)myalloc2(sizeof(int));
+            varibleInt=(int*) myalloc(sizeof(int));
             if(varibleInt==NULL){
-                exit(1);
+                exit(3);
             }
             *varibleInt=operation->valueInt;
             printf("\n************************************\n");
@@ -89,35 +88,41 @@ void MainTest(struct Operation *operation){
             printf("Address of the integer : %p\n",varibleInt);
             printf("************************************\n");
             if(operation->reallocValue!=0){
-                //reaoolc
-
+                varibleInt=myrealloc(varibleInt,operation->reallocValue);
+                printf("\n************************************\n");
+                printf("After Reallocation of the integer \n");
+                printf("Value of the integer : %d \n",*varibleInt);
+                printf("Address of the integer : %p\n",varibleInt);
+                printf("************************************\n");
             }
             myfree(varibleInt);
 
             break;
         case 2:
-            variableStruct=(struct test1 *)myalloc2(sizeof(struct test1));
+            variableStruct=(struct test1 *) myalloc(sizeof(struct test1));
             if(variableStruct==NULL){
                 exit(3);
             }
-
-            printf("************************************\n");
+            (*(&variableStruct))->a=operation->valueInt;
+            (*(&variableStruct))->b=operation->valueInt;
+            (*(&variableStruct))->c=operation->valueInt;
+            printf("\n************************************\n");
             printf("After Allocation of the test structure \n");
             printf("Value of a : %d \n",variableStruct->a);
             printf("Value of a : %d \n",variableStruct->b);
             printf("Value of a : %d \n",variableStruct->c);
-            printf("Address of a : %p\n",variableStruct->a);
-            printf("Address of b : %p\n",variableStruct->b);
-            printf("Address of c : %p\n",variableStruct->c);
+            printf("Address of a : %p\n",&variableStruct->a);
+            printf("Address of b : %p\n",&variableStruct->b);
+            printf("Address of c : %p\n",&variableStruct->c);
             printf("************************************\n");
             if(operation->reallocValue!=0){
-                //reaoolc
-
+                variableStruct=myrealloc(variableStruct,operation->reallocValue);
             }
             myfree(varibleInt);
 
             break;
     }
+    exit(0);
 }
 /**
  * \fn struct TestInstructions readFile(const char *file)
@@ -129,8 +134,8 @@ void MainTest(struct Operation *operation){
 struct TestInstructions readFile(const char *file){
     struct TestInstructions *tests;
     tests=malloc(sizeof(struct TestInstructions));
-    int nBLines=3;
-    int n,i;
+    int nBLines=4;
+    int i;
     FILE *fp;
     fp=fopen(file,"r");
     if(fp==NULL){
@@ -144,6 +149,7 @@ struct TestInstructions readFile(const char *file){
 
         tests->operations[i]=*operation;
         tests->nBoperations++;
+        printf("%d", tests->nBoperations);
     }
     fclose(fp);
     return *tests;

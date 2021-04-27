@@ -6,6 +6,7 @@
  * \version 2.7
  */
 #include "functions.h"
+#include <string.h>
 #include <stdio.h>
 
 static ListeBlock listeOfBlocksAlueted;
@@ -43,7 +44,7 @@ void initMemory(int nbytes){
  * \return Adresse ou NULL.
  *  Function to go from memory for a variable to the memory space reserved for the program.
  */
-void *myalloc2(int nBytes){
+void *myalloc(int nBytes){
     ListeBlock l;
     if((l=getBestBlock(nBytes))==-1){
         printf("Depacement de memoire\n");
@@ -84,9 +85,9 @@ struct DataProgramme createDetailsProgrmme(int nBytes){
     d->AdresseMemoireAcuelle=NULL;
     d->AdresseMemoireMax=NULL;
     d->AdresseMemoireInitiale=NULL;
-    d->taillePageDuSysteme=NULL;
+    d->taillePageDuSysteme=0;
     d->taillePageDuSysteme=getpagesize();
-    d->tailleMemoireTotal=NULL;
+    d->tailleMemoireTotal=0;
     return *d;
 }
 /**
@@ -127,63 +128,30 @@ int myfree(void *p){
  * Divides the memory zone in different size blocks of 4 , 8 and random between 9 and 100.
  */
 void divisionOfMemoryZone(){
-    int *memp=donnesProgramme.AdresseMemoireInitiale+donnesProgramme.tailleMemoireTotal;
     int mD=donnesProgramme.tailleMemoireTotal/2;
     char *AmD=donnesProgramme.AdresseMemoireInitiale+mD;
-    char *AmD2=donnesProgramme.AdresseMemoireInitiale+mD+mD;
+    int mD2=mD/2;
+    char *AmD2=donnesProgramme.AdresseMemoireInitiale+mD2;
     char *AmD3=donnesProgramme.AdresseMemoireInitiale+mD+mD+mD;
     char *AmD4=donnesProgramme.AdresseMemoireMax;
     int pointTap=0;
     srand( time( NULL ) );
     int searchedValue = rand() % 101;
+
     /**
-     * Division for 4 bits
-     */
-     char *i=donnesProgramme.AdresseMemoireAcuelle;
-     while(i<AmD && i<donnesProgramme.AdresseMemoireMax){
-         i=i+4;
-         struct Block block;
-         block.taille=4;
-         block.data=i;
-         inserteteListe(&ListOfFreeBlocks, block);
-     }
-    /**
-    * Division for 8 bits
+    * Divison for 2²
     */
-     char *f=AmD;
-     while(f<AmD2 && f<donnesProgramme.AdresseMemoireMax){
-         f=f+8;
-         struct Block block;
-         block.taille=8;
-         block.data=f;
-         inserteteListe(&ListOfFreeBlocks, block);
-     }
-     /**
-      * Divison for 2²
-      */
-      int a=4;
-      char *e=AmD2;
-      while(e<AmD3 && e<donnesProgramme.AdresseMemoireMax){
-          a=a*2;
-          e=e+a;
-          struct Block block;
-          block.taille=a;
-          block.data=e;
-          inserteteListe(&ListOfFreeBlocks, block);
-      }
-      /**
-       * Divison for 5⁵ (if it's possible)
-       */
-    int b=5;
-    char *t=AmD3;
-    while(t<AmD4 && t<donnesProgramme.AdresseMemoireMax){
-        a=a*5;
-        t=t+a;
+    int a=1;
+    char *e=donnesProgramme.AdresseMemoireAcuelle;
+    while(e<AmD3 && e<donnesProgramme.AdresseMemoireMax){
+        a=a*2;
+        e=e+a;
         struct Block block;
         block.taille=a;
-        block.data=t;
+        block.data=e;
         inserteteListe(&ListOfFreeBlocks, block);
     }
+
 }
 /**
  * \fn ListeBlock getBestBlock(int nBytes)
@@ -193,10 +161,18 @@ void divisionOfMemoryZone(){
  */
 ListeBlock getBestBlock(int nBytes){
     while(ListOfFreeBlocks != NULL){
-        if(nBytes==ListOfFreeBlocks->block.taille || nBytes < ListOfFreeBlocks->block.taille){
+        if(nBytes==ListOfFreeBlocks->block.taille || nBytes < ListOfFreeBlocks->block.taille && ListOfFreeBlocks->used!=1){
+            ListOfFreeBlocks->used=1;
             return ListOfFreeBlocks;
         }
         ListOfFreeBlocks= next(ListOfFreeBlocks);
     }
-    return -1;
+    return NULL;
+}
+
+void *myrealloc(void *p,int newSize){
+    void * newData=myalloc(newSize);
+    memcpy(newData, p, sizeof(p));
+    myfree(p);
+    return (void*) newData;
 }
