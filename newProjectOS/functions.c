@@ -135,8 +135,7 @@ void divisionOfMemoryZone(){
     char *AmD3=donnesProgramme.AdresseMemoireInitiale+mD+mD+mD;
     char *AmD4=donnesProgramme.AdresseMemoireMax;
     int pointTap=0;
-    srand( time( NULL ) );
-    int searchedValue = rand() % 101;
+
 
     /**
     * Divison for 2²

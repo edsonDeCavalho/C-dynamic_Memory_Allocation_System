@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.c
+ListeBlock.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.h
+
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.h
 stdio.h
 -
@@ -16,6 +20,14 @@ unistd.h
 stdbool.h
 -
 stdlib.h
+-
+
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.c
+functions.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
+string.h
+-
+stdio.h
 -
 
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
@@ -29,6 +41,22 @@ time.h
 -
 ListeBlock.h
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/ListeBlock.h
+
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/main.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+sys/stat.h
+-
+stdbool.h
+-
+utils.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.h
+functions.h
+/home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/functions.h
 
 /home/nudian/Documents/Github/Dynamic_Memory_Allocation_System/newProjectOS/utils.c
 stdlib.h
